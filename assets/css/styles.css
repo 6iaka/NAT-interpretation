@@ -100,7 +100,7 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem 0 1rem;
+    padding: 0 2rem 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,6 +112,7 @@ nav {
     gap: 0.5rem;
     text-decoration: none;
     transition: var(--transition);
+    margin-left: -0.35rem;
 }
 
 .logo:hover {
@@ -119,29 +120,19 @@ nav {
 }
 
 .logo img {
-    height: 95px;
+    height: auto;
+    max-height: 58px;
     width: auto;
-    max-width: 140px;
+    max-width: min(220px, 44vw);
     object-fit: contain;
-    object-position: center;
+    object-position: left center;
     display: block;
-}
-
-.logo span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
     .logo img {
-        height: 70px;
-        max-width: 100px;
-    }
-    
-    .logo span {
-        font-size: 1.25rem;
+        max-height: 48px;
+        max-width: min(188px, 42vw);
     }
     
     .logo {
@@ -153,18 +144,14 @@ nav {
     }
     
     nav {
-        padding: 0 1rem 0 0.75rem;
+        padding: 0 1rem 0 0;
     }
 }
 
 @media (max-width: 480px) {
     .logo img {
-        height: 60px;
-        max-width: 85px;
-    }
-    
-    .logo span {
-        font-size: 1.125rem;
+        max-height: 42px;
+        max-width: min(158px, 40vw);
     }
     
     .logo {
@@ -176,7 +163,11 @@ nav {
     }
     
     nav {
-        padding: 0 0.75rem 0 0.5rem;
+        padding: 0 0.75rem 0 0;
+    }
+    
+    .logo {
+        margin-left: -0.25rem;
     }
     
     .hero {
