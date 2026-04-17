@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=10">
+    <link rel="stylesheet" href="assets/css/styles.css?v=11">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -118,20 +118,18 @@
                     <h2>Request a Quote</h2>
                     <p style="margin-bottom: 2rem; color: var(--text-light);">Fill out the form below and we'll get back to you with a detailed quote within 24 hours.</p>
                     
-                    <!-- 
-                        FORMSPREE SETUP INSTRUCTIONS:
-                        1. Go to https://formspree.io/ and create a free account
-                        2. Create a new form and copy the form action URL (it will look like: https://formspree.io/f/YOUR_FORM_ID)
-                        3. Replace "YOUR_FORMSPREE_ENDPOINT_HERE" below with your actual Formspree endpoint
-                        4. Replace "example@domain.com" in the hidden _replyto field with your actual email address
-                        5. Test the form to ensure it works correctly
-                        
-                        Alternative: If using Netlify Forms, remove the action and method attributes,
-                        add netlify attribute to the form tag, and deploy to Netlify.
+                    <!--
+                        WEB3FORMS SETUP:
+                        1. Go to https://web3forms.com and enter contact@nattranslation.com to generate a free access key.
+                        2. Replace YOUR_WEB3FORMS_ACCESS_KEY below with the key emailed to you.
+                        3. Submissions will be delivered to contact@nattranslation.com automatically.
                     -->
-                    <form action="YOUR_FORMSPREE_ENDPOINT_HERE" method="POST" id="contact-form">
-                        <!-- Hidden field for reply-to email -->
-                        <input type="hidden" name="_replyto" value="contact@nattranslation.com">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" novalidate>
+                        <input type="hidden" name="access_key" value="17d81678-0d0a-43f8-87a2-98a9ae6dfeda">
+                        <input type="hidden" name="subject" value="New quote request from nattranslation.com">
+                        <input type="hidden" name="from_name" value="NAT Translation website">
+                        <input type="hidden" name="redirect" value="false">
+                        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                         
                         <!-- Full Name -->
                         <div class="form-group">
@@ -191,7 +189,9 @@
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-                        
+
+                        <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+
                         <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-light); text-align: center;">
                             By submitting this form, you agree to be contacted by NAT Interpretation &amp; Translation Services, LLC.
                         </p>
@@ -265,7 +265,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
     <script>
         // Handle query parameters for pre-selecting service
         document.addEventListener('DOMContentLoaded', function() {
