@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=6">
+    <link rel="stylesheet" href="assets/css/styles.css?v=10">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -42,7 +42,21 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Our Services</h1>
-            <p>Interpretation, document translation, and communication support centered on multilingual schools, healthcare, communities, faith spaces, social services, legal settings, and families</p>
+            <p class="hero-lead">Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families.</p>
+        </div>
+    </section>
+
+    <section class="services-inline-cta" aria-label="Get a quote or contact us">
+        <div class="container services-inline-cta-inner">
+            <div class="services-inline-cta-text">
+                <strong>Book interpreting, request translation, or ask a question</strong>
+                <span>24/7 phone &amp; video interpreting at $1.99/min · Quotes for documents and on-site visits · <a href="mailto:contact@nattranslation.com" class="services-inline-cta-email">contact@nattranslation.com</a></span>
+            </div>
+            <div class="services-inline-cta-actions">
+                <a href="contact.html?service=quote" class="btn btn-primary">Request a quote</a>
+                <a href="contact.html" class="btn btn-secondary">Contact us</a>
+                <a href="tel:+12073857813" class="services-inline-cta-phone">(207) 385-7813</a>
+            </div>
         </div>
     </section>
 
@@ -348,12 +362,60 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+            <div class="section-title faq-section-title">
+                <h2 id="faq-heading">Frequently asked questions</h2>
+                <p>Quick answers about how we work. For anything else, <a href="contact.html">contact us</a>.</p>
+            </div>
+            <div class="faq-accordion">
+                <details class="faq-item">
+                    <summary>Do you offer interpreters outside regular business hours?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. Multilingual phone and video interpreting is available <strong>24 hours a day, 7 days a week</strong> at <strong>$1.99 per minute</strong>. Use the phone number on our <a href="contact.html">contact page</a> when you need immediate spoken-language support.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What languages do you support?</summary>
+                    <div class="faq-answer">
+                        <p>We support a wide range of <strong>African languages</strong> (including Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and others) and <strong>world languages</strong> such as Arabic, Spanish, Chinese, French, and more. Availability depends on modality and scheduling—see our <a href="#languages">full list</a> and tell us what you need when you reach out.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How are in-person sessions billed? Is there a travel fee?</summary>
+                    <div class="faq-answer">
+                        <p>In-person interpreting may include <strong>mileage or travel costs</strong> depending on location. We confirm pricing up front when you request a quote or schedule, so there are no surprises.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What kinds of documents can you translate?</summary>
+                    <div class="faq-answer">
+                        <p>We translate <strong>official documents</strong> (certified where required) as well as everyday materials—letters, forms, notices, outreach flyers, program handouts, and similar content—with attention to both accuracy and cultural clarity.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How quickly will you respond to a quote request?</summary>
+                    <div class="faq-answer">
+                        <p>We typically reply to email and contact-form messages within <strong>24 hours on business days</strong>. If your request is urgent, call us—especially for live interpreting needs.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Who do you typically work with?</summary>
+                    <div class="faq-answer">
+                        <p>We work with <strong>schools and youth programs</strong>, <strong>healthcare and clinics</strong>, <strong>community and social-service organizations</strong>, <strong>churches and Islamic centers</strong>, <strong>social workers</strong>, <strong>legal offices</strong>, and <strong>families</strong>—supporting multilingual and immigrant communities across Maine and remotely.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="section cta-section">
         <div class="container">
-            <h2>Need a Quote?</h2>
-            <p>Contact us today to discuss your specific language service needs and receive a detailed quote.</p>
-            <a href="contact.html?service=quote" class="btn btn-primary btn-large cta-button">Request a Quote</a>
+            <h2>Ready to get started?</h2>
+            <p>Tell us about your language pair, setting (medical, school, legal, community, etc.), and preferred date or time. We will follow up with next steps and pricing.</p>
+            <a href="contact.html?service=quote" class="btn btn-primary btn-large cta-button">Request a quote</a>
         </div>
     </section>
 
@@ -370,18 +432,19 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="services.html#document-translation">Document Translation</a></li>
-                    <li><a href="services.html#interpretation">Interpretation</a></li>
-                    <li><a href="services.html#cultural-support">Cultural &amp; community</a></li>
-                    <li><a href="services.html#languages">Languages</a></li>
-                    <li><a href="services.html#community">Community &amp; family</a></li>
-                    <li><a href="services.html#medical">Medical Interpretation</a></li>
-                    <li><a href="services.html#court">Court Interpretation</a></li>
+                    <li><a href="#document-translation">Document Translation</a></li>
+                    <li><a href="#interpretation">Interpretation</a></li>
+                    <li><a href="#cultural-support">Cultural &amp; community</a></li>
+                    <li><a href="#languages">Languages</a></li>
+                    <li><a href="#community">Community &amp; family</a></li>
+                    <li><a href="#medical">Medical Interpretation</a></li>
+                    <li><a href="#court">Court Interpretation</a></li>
                 </ul>
             </div>
         </div>

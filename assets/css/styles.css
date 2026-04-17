@@ -340,6 +340,13 @@ nav {
     max-width: 700px;
 }
 
+.hero .hero-lead {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    max-width: 32rem;
+    margin-bottom: 2rem;
+}
+
 .hero-cta {
     display: flex;
     gap: 1.25rem;
@@ -430,6 +437,187 @@ nav {
     transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.25) !important;
     border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ===== SERVICES PAGE: TOP CTA STRIP ===== */
+.services-inline-cta {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    color: white;
+    padding: 1.25rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.services-inline-cta-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+}
+
+.services-inline-cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    max-width: 36rem;
+}
+
+.services-inline-cta-text strong {
+    font-size: 1.125rem;
+    color: white;
+}
+
+.services-inline-cta-text span {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.5;
+}
+
+.services-inline-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.services-inline-cta .btn-primary {
+    background: white;
+    color: var(--primary-dark);
+    border: 2px solid white;
+}
+
+.services-inline-cta .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-dark);
+}
+
+.services-inline-cta .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.services-inline-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+}
+
+.services-inline-cta-phone {
+    font-weight: 600;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
+.services-inline-cta-phone:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.services-inline-cta-email {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.services-inline-cta-email:hover {
+    color: white;
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-section {
+    background-color: var(--bg-white);
+}
+
+.section-title.faq-section-title {
+    text-align: center;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+.section-title.faq-section-title h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.faq-accordion {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    background: var(--bg-white);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1rem 3rem 1rem 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    position: relative;
+    user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.faq-item[open] summary::after {
+    content: '\2212';
+}
+
+.faq-item[open] summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-answer {
+    padding: 1rem 1.25rem 1.25rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .services-inline-cta-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .services-inline-cta-actions {
+        justify-content: stretch;
+    }
+
+    .services-inline-cta-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-inline-cta-phone {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
 }
 
 /* ===== CONTAINER & SECTIONS ===== */
@@ -561,6 +749,40 @@ nav {
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Equal-height card rows (flex-wrap; avoids overflow on narrow screens) */
+.grid.cards-equal-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.grid.cards-equal-row > .card,
+.grid.cards-equal-row > .feature {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.grid.cards-equal-row > .card {
+    flex: 1 1 min(280px, 100%);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.grid.cards-equal-row > .card > .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.grid.cards-equal-row > .feature {
+    flex: 1 1 min(220px, 100%);
 }
 
 /* ===== HOW IT WORKS ===== */
@@ -850,6 +1072,41 @@ nav {
     color: var(--text-light);
 }
 
+.feature-body {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.feature-body p {
+    flex-grow: 1;
+}
+
+/* Why Choose NAT: responsive container — flex + flex-wrap, each card = flex-1,
+   with a hard cap of 2 columns per row on larger screens.
+   Card internals stay in their normal vertical layout. */
+.why-choose-us .why-choose-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+.why-choose-us .why-choose-cards > .feature {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .why-choose-us .why-choose-cards > .feature {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
 /* ===== TESTIMONIALS ===== */
 .testimonials {
     background-color: var(--bg-light);
@@ -1025,6 +1282,14 @@ nav {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.services-hero .hero-lead {
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 36rem;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    margin-bottom: 0;
 }
 
 .service-item {
@@ -1477,6 +1742,13 @@ footer {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .hero .hero-lead {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.05rem;
     }
     
     .specialist-content {
