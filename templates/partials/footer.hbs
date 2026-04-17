@@ -1,0 +1,27 @@
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>{{global.business_name}}</h3>
+            <p>{{global.footer.tagline}}</p>
+        </div>
+        <div class="footer-section">
+            <h3>{{global.footer.quick_links_title}}</h3>
+            <ul class="footer-links">
+                {{#each global.footer.quick_links}}
+                <li><a href="{{href}}">{{label}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>{{global.footer.services_title}}</h3>
+            <ul class="footer-links">
+                {{#each global.footer.services_links}}
+                <li><a href="{{href}}">{{label}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>{{{global.footer.copyright}}}</p>
+    </div>
+</footer>

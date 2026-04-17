@@ -1,0 +1,13 @@
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="updated%20logo.jpg" alt="{{global.logo_alt}}">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html"{{#if (eq active 'home')}} class="active"{{/if}}>{{global.nav.home}}</a></li>
+            <li><a href="services.html"{{#if (eq active 'services')}} class="active"{{/if}}>{{global.nav.services}}</a></li>
+            <li><a href="contact.html"{{#if (eq active 'contact')}} class="active"{{/if}}>{{global.nav.contact}}</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+    </nav>
+</header>

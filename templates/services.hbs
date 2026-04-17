@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+    {{> header}}
+
+    <!-- Page Header -->
+    <section class="hero services-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{hero.title}}</h1>
+            <p class="hero-lead">{{hero.lead}}</p>
+        </div>
+    </section>
+
+    <section class="services-inline-cta" aria-label="Get a quote or contact us">
+        <div class="container services-inline-cta-inner">
+            <div class="services-inline-cta-text">
+                <strong>{{inline_cta.headline}}</strong>
+                <span>{{inline_cta.subtext}} · <a href="mailto:{{global.email}}" class="services-inline-cta-email">{{global.email}}</a></span>
+            </div>
+            <div class="services-inline-cta-actions">
+                <a href="contact.html?service=quote" class="btn btn-primary">{{inline_cta.quote_label}}</a>
+                <a href="contact.html" class="btn btn-secondary">{{inline_cta.contact_label}}</a>
+                <a href="tel:{{global.phone_link}}" class="services-inline-cta-phone">{{global.phone_display}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Translation Section -->
+    <section class="section" id="document-translation">
+        <div class="container">
+            <div class="service-category">
+                <div class="section-title">
+                    <h2>{{document_translation.title}}</h2>
+                    <p>{{document_translation.intro}}</p>
+                </div>
+
+                {{#each document_translation.items}}
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        {{> service_icon}}
+                    </div>
+                    <h3>{{title}}</h3>
+                    {{{html}}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural and community support -->
+    <section class="section" id="cultural-support" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="service-category">
+                <div class="section-title">
+                    <h2>{{cultural_support.title}}</h2>
+                    <p>{{{cultural_support.intro}}}</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>{{cultural_support.item_title}}</h3>
+                    <p>{{cultural_support.item_body}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interpretation Section -->
+    <section class="section" id="interpretation">
+        <div class="container">
+            <div class="service-category">
+                <div class="section-title">
+                    <h2>{{interpretation.title}}</h2>
+                    <p>{{interpretation.intro}}</p>
+                </div>
+
+                {{#each interpretation.items}}
+                <div class="service-item"{{#if id}} id="{{id}}"{{/if}}>
+                    <div class="service-item-icon">
+                        {{> service_icon}}
+                    </div>
+                    <h3>{{title}}</h3>
+                    {{{html}}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages supported -->
+    <section class="section" id="languages" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="service-category">
+                <div class="section-title">
+                    <h2>{{languages.title}}</h2>
+                    <p>{{{languages.intro}}}</p>
+                </div>
+                <div class="grid grid-2" style="align-items: start;">
+                    <div class="service-item" style="height: 100%;">
+                        <h3>{{languages.african_title}}</h3>
+                        <ul>
+                            {{#each languages.african}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="service-item" style="height: 100%;">
+                        <h3>{{languages.other_title}}</h3>
+                        <ul>
+                            {{#each languages.other}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+            <div class="section-title faq-section-title">
+                <h2 id="faq-heading">{{faq.title}}</h2>
+                <p>{{{faq.intro}}}</p>
+            </div>
+            <div class="faq-accordion">
+                {{#each faq.items}}
+                <details class="faq-item">
+                    <summary>{{question}}</summary>
+                    <div class="faq-answer">
+                        <p>{{{answer}}}</p>
+                    </div>
+                </details>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>{{cta.title}}</h2>
+            <p>{{cta.intro}}</p>
+            <a href="{{cta.button_href}}" class="btn btn-primary btn-large cta-button">{{cta.button_label}}</a>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    {{> scripts}}
+</body>
+</html>

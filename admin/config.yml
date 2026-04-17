@@ -1,0 +1,525 @@
+backend:
+  name: github
+  repo: 6iaka/NAT-interpretation
+  branch: main
+  base_url: https://nattranslation.com
+  auth_endpoint: api/auth
+
+# Rebuild & redeploy on Vercel happen automatically when Decap commits.
+publish_mode: simple
+
+# The CMS shows edit previews using files in the repo, so media paths must
+# match what the built site expects.
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+# A short note shown in the admin shell.
+site_url: https://nattranslation.com
+display_url: https://nattranslation.com
+logo_url: https://nattranslation.com/updated%20logo.jpg
+
+# Helpful hint for fields that accept inline HTML.
+# (Displayed in the "Hint" text we attach below.)
+# Allowed: <strong>bold</strong>, <em>italic</em>, <a href="...">link</a>, <br>
+
+collections:
+  # ================================================================
+  # 1. Site-wide settings (nav, footer, contact info, business name)
+  # ================================================================
+  - name: site
+    label: "Site-wide settings"
+    description: "Phone number, email, navigation labels, footer links. These show on every page."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/global.json
+        name: global
+        label: "Nav, footer & contact info"
+        fields:
+          - { name: business_name, label: "Full legal business name", widget: string, hint: "Shown in footer and meta tags." }
+          - { name: business_short, label: "Short business name", widget: string, hint: "Used inside paragraphs." }
+          - { name: phone_display, label: "Phone (for display)", widget: string, hint: "Formatted, e.g. (207) 385-7813" }
+          - { name: phone_link, label: "Phone (for click-to-call)", widget: string, hint: "Digits only with +1, e.g. +12073857813" }
+          - { name: email, label: "Email address", widget: string }
+          - { name: location, label: "Location", widget: string, hint: "e.g. Bangor, Maine" }
+          - { name: logo_alt, label: "Logo alt text", widget: string, hint: "Describes the logo for screen readers and SEO." }
+          - { name: rate_24_7, label: "24/7 interpreting rate", widget: string, hint: "e.g. $1.99 per minute" }
+          - name: nav
+            label: "Navigation labels"
+            widget: object
+            fields:
+              - { name: home, label: "Home link text", widget: string }
+              - { name: services, label: "Services link text", widget: string }
+              - { name: contact, label: "Contact link text", widget: string }
+          - name: footer
+            label: "Footer"
+            widget: object
+            fields:
+              - { name: tagline, label: "Footer tagline paragraph", widget: text }
+              - { name: quick_links_title, label: "Quick Links heading", widget: string }
+              - name: quick_links
+                label: "Quick Links"
+                label_singular: "link"
+                widget: list
+                fields:
+                  - { name: label, label: "Link text", widget: string }
+                  - { name: href, label: "Link URL", widget: string }
+              - { name: services_title, label: "Services column heading", widget: string }
+              - name: services_links
+                label: "Services links"
+                label_singular: "link"
+                widget: list
+                fields:
+                  - { name: label, label: "Link text", widget: string }
+                  - { name: href, label: "Link URL", widget: string }
+              - { name: copyright, label: "Copyright line", widget: text, hint: "HTML allowed. Change the year yearly." }
+
+  # ================================================================
+  # 2. Home page
+  # ================================================================
+  - name: home_page
+    label: "Home page"
+    description: "All text on the homepage."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/home.json
+        name: home
+        label: "Home page content"
+        fields:
+          - name: seo
+            label: "SEO (search engines / social sharing)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: page_title, label: "Browser tab title", widget: string }
+              - { name: description, label: "Meta description (1-2 sentences for Google)", widget: text }
+              - { name: keywords, label: "Meta keywords (comma-separated)", widget: string }
+              - { name: og_title, label: "Open Graph title (Facebook/LinkedIn)", widget: string }
+              - { name: og_description, label: "Open Graph description", widget: text }
+              - { name: twitter_description, label: "Twitter description", widget: text }
+          - name: hero
+            label: "Hero (video banner at top)"
+            widget: object
+            fields:
+              - { name: title, label: "Hero headline", widget: string }
+              - { name: lead, label: "Hero subtitle", widget: text }
+              - { name: cta_primary_label, label: "Primary button text", widget: string }
+              - { name: cta_secondary_label, label: "Secondary button text", widget: string }
+          - name: who_we_serve
+            label: "Who We Serve section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro_1, label: "First paragraph (HTML allowed)", widget: text, hint: "You can use <strong>bold</strong> tags for emphasis." }
+              - { name: intro_2, label: "Second paragraph (HTML allowed)", widget: text }
+              - { name: audiences_title, label: "Left card title", widget: string }
+              - { name: audiences_intro, label: "Left card intro line", widget: string }
+              - name: audiences_list
+                label: "List of audiences"
+                label_singular: "audience"
+                widget: list
+                field: { name: item, label: "Audience", widget: string }
+              - { name: audiences_footnote, label: "Left card footer paragraph", widget: text }
+              - { name: cultural_title, label: "Right card title", widget: string }
+              - { name: cultural_p1, label: "Right card paragraph 1", widget: text }
+              - { name: cultural_p2, label: "Right card paragraph 2 (HTML allowed)", widget: text }
+              - { name: cultural_cta_label, label: "Right card button label", widget: string }
+              - { name: cultural_cta_href, label: "Right card button URL", widget: string }
+          - name: how_it_works
+            label: "How It Works section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: steps
+                label: "Steps"
+                label_singular: "step"
+                widget: list
+                fields:
+                  - { name: number, label: "Step number", widget: string }
+                  - { name: title, label: "Step title", widget: string }
+                  - { name: description, label: "Step description", widget: text }
+          - name: specialist
+            label: "Featured Specialist section"
+            widget: object
+            fields:
+              - { name: image_alt, label: "Photo alt text", widget: string }
+              - { name: badge, label: "Badge label (above name)", widget: string }
+              - { name: title, label: "Heading (e.g. Meet Aminata)", widget: string }
+              - { name: role, label: "Role", widget: string }
+              - { name: description, label: "Bio", widget: text }
+              - name: expertise
+                label: "Expertise chips"
+                label_singular: "chip"
+                widget: list
+                fields:
+                  - { name: title, label: "Title", widget: string }
+                  - { name: certification, label: "Certification", widget: string }
+              - { name: cta_label, label: "Button label", widget: string }
+              - { name: cta_href, label: "Button URL", widget: string }
+          - name: why_choose
+            label: "Why Choose NAT Interpretation"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: features
+                label: "Feature cards (4)"
+                label_singular: "feature"
+                widget: list
+                min: 4
+                max: 4
+                fields:
+                  - { name: title, label: "Feature title", widget: string }
+                  - { name: description, label: "Feature description", widget: text }
+          - name: services_preview
+            label: "Services Preview cards"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: items
+                label: "Preview cards (3)"
+                label_singular: "card"
+                widget: list
+                min: 3
+                max: 3
+                fields:
+                  - { name: title, label: "Card title", widget: string }
+                  - { name: description, label: "Card description", widget: text }
+                  - { name: link_label, label: "Link label (e.g. Learn More)", widget: string }
+                  - { name: link_href, label: "Link URL", widget: string }
+          - name: testimonials
+            label: "Testimonials"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: items
+                label: "Testimonials"
+                label_singular: "testimonial"
+                widget: list
+                fields:
+                  - { name: quote, label: "Quote text", widget: text }
+                  - { name: initials, label: "Initials (for circle)", widget: string }
+                  - { name: name, label: "Name", widget: string }
+                  - { name: role, label: "Role / Organization", widget: string }
+          - name: service_areas
+            label: "Service Areas section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: items
+                label: "Area cards (2)"
+                label_singular: "card"
+                widget: list
+                min: 2
+                max: 2
+                fields:
+                  - { name: title, label: "Card title", widget: string }
+                  - { name: description, label: "Card description", widget: text }
+          - name: cta
+            label: "Bottom CTA banner"
+            widget: object
+            fields:
+              - { name: title, label: "CTA title", widget: string }
+              - { name: intro, label: "CTA intro", widget: text }
+              - { name: button_label, label: "Button label", widget: string }
+              - { name: button_href, label: "Button URL", widget: string }
+
+  # ================================================================
+  # 3. Services page
+  # ================================================================
+  - name: services_page
+    label: "Services page"
+    description: "All text on the Services page."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/services.json
+        name: services
+        label: "Services page content"
+        fields:
+          - name: seo
+            label: "SEO"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: page_title, label: "Browser tab title", widget: string }
+              - { name: description, label: "Meta description", widget: text }
+              - { name: keywords, label: "Meta keywords", widget: string }
+              - { name: og_title, label: "Open Graph title", widget: string }
+              - { name: og_description, label: "Open Graph description", widget: text }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: title, label: "Hero headline", widget: string }
+              - { name: lead, label: "Hero subtitle", widget: text }
+          - name: inline_cta
+            label: "Top CTA strip"
+            widget: object
+            fields:
+              - { name: headline, label: "Headline", widget: string }
+              - { name: subtext, label: "Subtext", widget: text }
+              - { name: quote_label, label: "Quote button label", widget: string }
+              - { name: contact_label, label: "Contact button label", widget: string }
+          - name: document_translation
+            label: "Document Translation section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: items
+                label: "Sub-sections"
+                label_singular: "sub-section"
+                widget: list
+                fields:
+                  - name: icon
+                    label: "Icon"
+                    widget: select
+                    options: ["document", "document-lines", "process", "clock"]
+                  - { name: title, label: "Sub-section title", widget: string }
+                  - { name: html, label: "Sub-section body (HTML)", widget: text, hint: "Use <p>...</p> for paragraphs, <ul><li>...</li></ul> for bullet lists, <strong>bold</strong>." }
+          - name: cultural_support
+            label: "Cultural & Community Support section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro (HTML allowed)", widget: text }
+              - { name: item_title, label: "Sub-section title", widget: string }
+              - { name: item_body, label: "Sub-section body", widget: text }
+          - name: interpretation
+            label: "Interpretation Services section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: items
+                label: "Sub-sections"
+                label_singular: "sub-section"
+                widget: list
+                fields:
+                  - { name: id, label: "Anchor ID (for #links)", widget: string, required: false }
+                  - name: icon
+                    label: "Icon"
+                    widget: select
+                    options: ["people", "medical", "education", "court", "conference", "modalities"]
+                  - { name: title, label: "Sub-section title", widget: string }
+                  - { name: html, label: "Sub-section body (HTML)", widget: text }
+          - name: languages
+            label: "Languages We Support section"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro (HTML allowed)", widget: text }
+              - { name: african_title, label: "Left column title", widget: string }
+              - name: african
+                label: "African languages"
+                label_singular: "language"
+                widget: list
+                field: { name: item, label: "Language", widget: string }
+              - { name: other_title, label: "Right column title", widget: string }
+              - name: other
+                label: "Other languages"
+                label_singular: "language"
+                widget: list
+                field: { name: item, label: "Language", widget: string }
+          - name: faq
+            label: "Frequently Asked Questions"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro (HTML allowed)", widget: text }
+              - name: items
+                label: "FAQ items"
+                label_singular: "question"
+                widget: list
+                fields:
+                  - { name: question, label: "Question", widget: string }
+                  - { name: answer, label: "Answer (HTML allowed)", widget: text }
+          - name: cta
+            label: "Bottom CTA banner"
+            widget: object
+            fields:
+              - { name: title, label: "CTA title", widget: string }
+              - { name: intro, label: "CTA intro", widget: text }
+              - { name: button_label, label: "Button label", widget: string }
+              - { name: button_href, label: "Button URL", widget: string }
+
+  # ================================================================
+  # 4. Contact page
+  # ================================================================
+  - name: contact_page
+    label: "Contact page"
+    description: "Text around the contact form. Form submissions always arrive at the business email in site-wide settings."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/contact.json
+        name: contact
+        label: "Contact page content"
+        fields:
+          - name: seo
+            label: "SEO"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: page_title, label: "Browser tab title", widget: string }
+              - { name: description, label: "Meta description", widget: text }
+              - { name: keywords, label: "Meta keywords", widget: string }
+              - { name: og_title, label: "Open Graph title", widget: string }
+              - { name: og_description, label: "Open Graph description", widget: text }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: title, label: "Hero headline", widget: string }
+              - { name: lead, label: "Hero subtitle", widget: text }
+          - name: info
+            label: "Contact information block"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: intro, label: "Intro paragraph", widget: text }
+              - { name: email_note, label: "Note under email", widget: string }
+              - { name: phone_note_1, label: "Note under phone (line 1, HTML allowed)", widget: text }
+              - { name: phone_note_2, label: "Note under phone (line 2)", widget: text }
+              - { name: service_area_title, label: "Service Area card title", widget: string }
+              - { name: service_area_note_1, label: "Service Area note 1", widget: string }
+              - { name: service_area_note_2, label: "Service Area note 2", widget: string }
+              - { name: scheduling_title, label: "Email & scheduling card title", widget: string }
+              - { name: scheduling_description, label: "Email & scheduling description", widget: text }
+              - { name: scheduling_note, label: "Email & scheduling footnote", widget: text }
+          - name: form
+            label: "Contact form copy"
+            widget: object
+            fields:
+              - { name: heading, label: "Form heading", widget: string }
+              - { name: intro, label: "Form intro paragraph", widget: text }
+              - name: labels
+                label: "Field labels"
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: name, label: "Full Name label", widget: string }
+                  - { name: email, label: "Email label", widget: string }
+                  - { name: phone, label: "Phone label", widget: string }
+                  - { name: service, label: "Service label", widget: string }
+                  - { name: language_pair, label: "Language Pair label", widget: string }
+                  - { name: message, label: "Message label", widget: string }
+                  - { name: preferred_datetime, label: "Preferred Date/Time label", widget: string }
+              - name: placeholders
+                label: "Field placeholder text (ghost text in empty inputs)"
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: name, label: "Name placeholder", widget: string }
+                  - { name: email, label: "Email placeholder", widget: string }
+                  - { name: phone, label: "Phone placeholder", widget: string }
+                  - { name: language_pair, label: "Language Pair placeholder", widget: string }
+                  - { name: message, label: "Message placeholder", widget: text }
+                  - { name: preferred_datetime, label: "Preferred Date/Time placeholder", widget: string }
+              - name: helper_text
+                label: "Helper text shown under fields"
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: phone, label: "Phone helper text", widget: string }
+                  - { name: language_pair, label: "Language Pair helper text (HTML allowed)", widget: text }
+                  - { name: preferred_datetime, label: "Preferred Date/Time helper text", widget: string }
+              - name: services_options
+                label: "Options for 'Service Needed' dropdown"
+                label_singular: "option"
+                widget: list
+                field: { name: option, label: "Option", widget: string }
+              - { name: services_placeholder, label: "First blank option label", widget: string }
+              - { name: submit_label, label: "Submit button label", widget: string }
+              - { name: legal, label: "Legal disclaimer under submit", widget: text }
+          - name: extras
+            label: "Bottom info cards"
+            widget: object
+            fields:
+              - { name: response_time_title, label: "Response Time card title", widget: string }
+              - { name: response_time_html, label: "Response Time card body (HTML allowed)", widget: text }
+              - { name: free_consultation_title, label: "Free Consultation card title", widget: string }
+              - { name: free_consultation_description, label: "Free Consultation card body", widget: text }
+
+  # ================================================================
+  # 5. Team page (currently unlinked but kept editable)
+  # ================================================================
+  - name: team_page
+    label: "Team page (hidden but editable)"
+    description: "The Meet Our Team page is not linked from the nav, but the content here updates if/when it is re-enabled."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/team.json
+        name: team
+        label: "Team page content"
+        fields:
+          - name: seo
+            label: "SEO"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: page_title, label: "Browser tab title", widget: string }
+              - { name: description, label: "Meta description", widget: text }
+              - { name: keywords, label: "Meta keywords", widget: string }
+              - { name: og_title, label: "Open Graph title", widget: string }
+              - { name: og_description, label: "Open Graph description", widget: text }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: title, label: "Hero headline", widget: string }
+              - { name: lead, label: "Hero subtitle", widget: text }
+          - { name: section_title, label: "Team section title", widget: string }
+          - { name: section_intro, label: "Team section intro (HTML allowed)", widget: text }
+          - name: lead_member
+            label: "Lead specialist (Aminata)"
+            widget: object
+            fields:
+              - { name: image_alt, label: "Photo alt text", widget: string }
+              - { name: badge, label: "Badge label", widget: string }
+              - { name: name, label: "Name", widget: string }
+              - { name: role, label: "Role", widget: string }
+              - { name: bio, label: "Bio", widget: text }
+          - name: members
+            label: "Other team members"
+            label_singular: "team member"
+            widget: list
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: role, label: "Role", widget: string }
+              - { name: bio, label: "Bio", widget: text }
+          - name: why_our_team
+            label: "Why Our Team Stands Out"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - { name: intro, label: "Section intro", widget: text }
+              - name: cards
+                label: "Value cards (4)"
+                label_singular: "card"
+                widget: list
+                min: 4
+                max: 4
+                fields:
+                  - { name: title, label: "Card title", widget: string }
+                  - { name: description, label: "Card description", widget: text }
+          - name: cta
+            label: "Bottom CTA banner"
+            widget: object
+            fields:
+              - { name: title, label: "CTA title", widget: string }
+              - { name: intro, label: "CTA intro", widget: text }
+              - { name: button_label, label: "Button label", widget: string }
+              - { name: button_href, label: "Button URL", widget: string }

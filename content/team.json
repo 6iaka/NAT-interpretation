@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "description": "Meet the team at NAT Interpretation & Translation Services—interpreters and translators for schools, healthcare, community and faith organizations, social services, legal settings, and families.",
+    "keywords": "interpretation team, Maine interpreters, African languages, certified translators, community interpreting",
+    "og_title": "Meet Our Team - NAT Interpretation & Translation Services",
+    "og_description": "Meet our certified team of professional interpreters and translators.",
+    "page_title": "Meet Our Team - NAT Interpretation & Translation Services, LLC"
+  },
+  "hero": {
+    "title": "Meet Our Team",
+    "lead": "Friendly, professional interpreters and translators for multilingual communities"
+  },
+  "section_title": "Our Expert Team",
+  "section_intro": "Our interpreters and translators are experienced, culturally responsive, and committed to clear communication for schools, healthcare, community and faith spaces, social services, legal offices, and families\u2014including Bambara, Wolof, Fula, Arabic, Spanish, and many other languages listed on our <a href=\"services.html#languages\">Services</a> page.",
+  "lead_member": {
+    "image_alt": "Aminata - Lead Specialist",
+    "badge": "Lead Specialist",
+    "name": "Aminata",
+    "role": "Certified Interpreter & Translator",
+    "bio": "With extensive expertise in interpretation and translation, Aminata brings deep cultural sensitivity to every assignment. She is a trusted partner for schools, healthcare teams, community and faith-based organizations, social workers, legal settings, and families\u2014supporting seamless communication across African languages and many other pairs. She specializes in medical interpretation (HIPAA certified), court interpretation (federally certified), and certified document translation."
+  },
+  "members": [
+    {
+      "name": "Maria Rodriguez",
+      "role": "Lead Medical Interpreter & Certified Translator",
+      "bio": "Maria brings over 15 years of experience in medical interpretation, specializing in Spanish-English language pairs. She is HIPAA certified and has extensive experience in hospital settings, emergency rooms, and specialized medical consultations. Maria holds a Master's degree in Translation Studies and is certified by the American Translators Association (ATA)."
+    },
+    {
+      "name": "Ahmed Hassan",
+      "role": "Certified Court Interpreter",
+      "bio": "Ahmed is a federally certified court interpreter with expertise in Arabic-English interpretation. He has provided interpretation services for criminal and civil court proceedings, depositions, and immigration hearings throughout Maine. Ahmed is certified by the Administrative Office of the U.S. Courts and maintains strict adherence to the interpreter code of ethics."
+    },
+    {
+      "name": "Sophie Chen",
+      "role": "Education Interpreter & Document Translator",
+      "bio": "Sophie specializes in educational interpretation and academic document translation. With a background in education and fluency in Mandarin, Cantonese, and English, she has extensive experience with IEP meetings, parent-teacher conferences, and translating academic transcripts and diplomas. Sophie is certified by the National Association of Judiciary Interpreters and Translators (NAJIT)."
+    },
+    {
+      "name": "Jean-Pierre Dubois",
+      "role": "Conference Interpreter & Business Translator",
+      "bio": "Jean-Pierre is a professional conference interpreter specializing in French-English language pairs. He provides simultaneous and consecutive interpretation for international business meetings, conferences, and large-scale events. With over 12 years of experience, Jean-Pierre has worked with Fortune 500 companies and international organizations. He holds certification from the International Association of Conference Interpreters (AIIC)."
+    }
+  ],
+  "why_our_team": {
+    "title": "Why Our Team Stands Out",
+    "intro": "What makes our team exceptional? Here are the key qualities that set us apart.",
+    "cards": [
+      {
+        "title": "Certified & Qualified",
+        "description": "All our interpreters and translators hold professional certifications from recognized organizations including ATA, NAJIT, and federal court certification. We maintain continuing education requirements to stay current with industry standards."
+      },
+      {
+        "title": "Background Checked",
+        "description": "Every team member undergoes comprehensive background checks and security clearances, especially important for court and medical interpretation work where confidentiality and trust are paramount."
+      },
+      {
+        "title": "Cultural Competency",
+        "description": "Our team members are not just linguistically fluent—they understand cultural nuances, regional dialects, and context-specific terminology that ensures accurate and culturally appropriate communication."
+      },
+      {
+        "title": "Specialized Expertise",
+        "description": "Each interpreter specializes in specific fields (medical, legal, education, business) ensuring they understand the terminology and protocols unique to each setting."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Work With Our Team",
+    "intro": "Ready to experience professional language services? Contact us to be matched with the right interpreter or translator for your needs.",
+    "button_label": "Contact Us",
+    "button_href": "contact.html"
+  }
+}

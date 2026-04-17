@@ -1,0 +1,144 @@
+{
+  "seo": {
+    "description": "Interpretation, document translation, and cultural language support for schools, clinics, community orgs, and families. African languages (Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and more) plus Arabic, Spanish, Chinese, and others. Maine and remote.",
+    "keywords": "Bambara interpreter, Wolof translation, Fula Pulaar, Hausa Swahili, document translation, school interpreter, community interpretation, Maine interpreter, cultural language support",
+    "og_title": "Services - NAT Interpretation & Translation Services",
+    "og_description": "Interpretation, document translation, and culturally responsive language support for multilingual communities.",
+    "page_title": "Services - NAT Interpretation & Translation Services, LLC"
+  },
+  "hero": {
+    "title": "Our Services",
+    "lead": "Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families."
+  },
+  "inline_cta": {
+    "headline": "Book interpreting, request translation, or ask a question",
+    "subtext": "24/7 phone & video interpreting at $1.99/min · Quotes for documents and on-site visits",
+    "quote_label": "Request a quote",
+    "contact_label": "Contact us"
+  },
+  "document_translation": {
+    "title": "Document Translation",
+    "intro": "Certified translation for official documents used by government agencies, schools, courts, and immigration offices—plus everyday written materials for organizations and families. All of it supports culturally clear communication for multilingual communities.",
+    "items": [
+      {
+        "icon": "document",
+        "title": "Letters, forms, notices & outreach",
+        "html": "<p>Document translation can cover letters, forms, notices, outreach materials, flyers, program documents, and other written communication that needs both <strong>linguistic accuracy</strong> and <strong>cultural clarity</strong>\u2014so your message is understood as intended.</p>"
+      },
+      {
+        "icon": "document-lines",
+        "title": "Official Document Translation",
+        "html": "<p>We provide certified translations for a wide range of official documents:</p><ul><li>Birth certificates and death certificates</li><li>Passports and identification documents</li><li>Academic transcripts and diplomas</li><li>Marriage certificates and divorce decrees</li><li>Medical records and reports</li><li>Legal documents and contracts</li><li>Business documents and certificates</li><li>Immigration documents</li></ul><p style=\"margin-top: 1rem;\"><strong>Certification &amp; Notarization:</strong> All translations include a certificate of accuracy and can be notarized upon request. Our certified translations are accepted by USCIS, universities, courts, and government agencies.</p>"
+      },
+      {
+        "icon": "process",
+        "title": "Translation Process",
+        "html": "<ul><li>Submit your document via secure upload or in-person</li><li>Receive a detailed quote within 24 hours</li><li>Professional translation by certified linguists</li><li>Quality assurance review by second translator</li><li>Certification and notarization (if required)</li><li>Secure delivery via email or mail</li></ul>"
+      },
+      {
+        "icon": "clock",
+        "title": "Turnaround Times",
+        "html": "<ul><li><strong>Standard:</strong> 3-5 business days</li><li><strong>Rush:</strong> 24-48 hours (additional fee)</li><li><strong>Emergency:</strong> Same-day service available (subject to availability)</li></ul>"
+      }
+    ]
+  },
+  "cultural_support": {
+    "title": "Cultural & Community Support",
+    "intro": "Culturally informed language support helps organizations improve communication with <strong>immigrant, refugee, African diaspora, and multilingual communities</strong>—whether through interpreting, translating written materials, or advising on tone and context for outreach.",
+    "item_title": "Why it matters",
+    "item_body": "Language access is not only word-for-word conversion. We help schools, healthcare teams, community and faith-based groups, social services, and legal partners communicate in ways that build trust, reduce misunderstandings, and respect cultural norms—alongside our core interpretation and translation services."
+  },
+  "interpretation": {
+    "title": "Interpretation Services",
+    "intro": "On-site and remote interpreting for the appointments, meetings, and moments that shape people\u2019s lives—including medical, legal, education, and community settings. Details on availability and rates are below.",
+    "items": [
+      {
+        "id": "community",
+        "icon": "people",
+        "title": "Schools, healthcare, community & family",
+        "html": "<p>We focus on helping schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many other languages</strong> used around the world.</p><p><strong>Primary audiences</strong> include schools and youth programs, healthcare and clinics, community and social-service organizations, churches, Islamic centers, social workers, legal offices, and families.</p><p>Our interpreters support <strong>on-site and remote</strong> sessions for appointments, meetings, intakes, school conferences, community events, and case management sessions.</p><p><strong>24/7 multilingual interpretation</strong> (phone/video) is available at <strong>$1.99 per minute</strong>. For in-person assignments, <strong>mileage may apply</strong>\u2014we will confirm when you request a quote or book. Our team is friendly, professional, and committed to seamless communication.</p>"
+      },
+      {
+        "id": "medical",
+        "icon": "medical",
+        "title": "Medical Interpretation",
+        "html": "<p>Certified medical interpreters ensure accurate communication between healthcare providers and patients, maintaining patient confidentiality and cultural sensitivity.</p><ul><li>Doctor appointments and consultations</li><li>Hospital visits and emergency room interpretation</li><li>Medical procedures and surgeries</li><li>Mental health counseling sessions</li><li>Physical therapy and rehabilitation</li><li>Pharmacy consultations</li><li>Medical billing and insurance discussions</li></ul><p style=\"margin-top: 1rem;\"><strong>HIPAA Compliant:</strong> All our medical interpreters are trained in HIPAA regulations and maintain strict patient confidentiality.</p>"
+      },
+      {
+        "id": "education",
+        "icon": "education",
+        "title": "Education Interpretation",
+        "html": "<p>Supporting students and families in educational settings with professional interpretation services for meetings, assessments, and school events.</p><ul><li>Parent-teacher conferences</li><li>Individualized Education Program (IEP) meetings</li><li>School enrollment and registration</li><li>Special education assessments</li><li>Disciplinary hearings</li><li>Graduation ceremonies and school events</li><li>College admissions interviews</li></ul><p style=\"margin-top: 1rem;\"><strong>Educational Expertise:</strong> Our interpreters understand educational terminology and special education processes.</p>"
+      },
+      {
+        "id": "court",
+        "icon": "court",
+        "title": "Court Interpretation",
+        "html": "<p>Certified court interpreters provide accurate, impartial interpretation for legal proceedings, maintaining the integrity of the judicial process.</p><ul><li>Criminal court hearings and trials</li><li>Civil court proceedings</li><li>Depositions and sworn statements</li><li>Arbitration and mediation</li><li>Probation and parole meetings</li><li>Attorney-client consultations</li><li>Immigration court hearings</li></ul><p style=\"margin-top: 1rem;\"><strong>Certified &amp; Sworn:</strong> Our court interpreters are certified and can provide sworn interpretation services as required by the court.</p>"
+      },
+      {
+        "id": "conference",
+        "icon": "conference",
+        "title": "Conference Interpretation",
+        "html": "<p>Professional conference interpretation services for business meetings, international conferences, and large-scale events.</p><ul><li>Simultaneous interpretation (with equipment)</li><li>Consecutive interpretation</li><li>Business meetings and negotiations</li><li>International conferences and conventions</li><li>Training sessions and workshops</li><li>Webinars and virtual events</li><li>Press conferences and media events</li></ul><p style=\"margin-top: 1rem;\"><strong>Equipment Available:</strong> We can provide interpretation equipment including headsets, microphones, and booths for large events.</p>"
+      },
+      {
+        "id": "modalities",
+        "icon": "modalities",
+        "title": "Interpretation Modalities",
+        "html": "<ul><li><strong>In-Person:</strong> On-site interpretation at your location</li><li><strong>Over-the-Phone (OPI):</strong> Immediate access to interpreters via phone</li><li><strong>Video Remote (VRI):</strong> Secure video interpretation via computer or tablet</li><li><strong>On-Demand:</strong> Same-day and emergency services available</li></ul>"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages We Support",
+    "intro": "Availability varies by language, modality (in-person, phone, or video), and scheduling. Tell us what you need when you <a href=\"contact.html\">contact us</a>\u2014we will confirm the right linguist for your setting.",
+    "african_title": "African languages",
+    "african": [
+      "Bambara", "Mandinka", "Malinké", "Maninka", "Mandingo", "Dyula",
+      "Fula (Pulaar)", "Wolof", "Soninke", "Hausa", "Swahili", "Kinyarwanda",
+      "Amharic", "Oromo", "Twi", "Loma", "Venda", "Tonga", "N\u2019Ko"
+    ],
+    "other_title": "Other languages",
+    "other": [
+      "Chinese", "Arabic", "Russian", "Spanish", "Ukrainian", "French",
+      "Portuguese", "Japanese", "Vietnamese", "Bangla", "Hindi", "German"
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Quick answers about how we work. For anything else, <a href=\"contact.html\">contact us</a>.",
+    "items": [
+      {
+        "question": "Do you offer interpreters outside regular business hours?",
+        "answer": "Yes. Multilingual phone and video interpreting is available <strong>24 hours a day, 7 days a week</strong> at <strong>$1.99 per minute</strong>. Use the phone number on our <a href=\"contact.html\">contact page</a> when you need immediate spoken-language support."
+      },
+      {
+        "question": "What languages do you support?",
+        "answer": "We support a wide range of <strong>African languages</strong> (including Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and others) and <strong>world languages</strong> such as Arabic, Spanish, Chinese, French, and more. Availability depends on modality and scheduling\u2014see our <a href=\"#languages\">full list</a> and tell us what you need when you reach out."
+      },
+      {
+        "question": "How are in-person sessions billed? Is there a travel fee?",
+        "answer": "In-person interpreting may include <strong>mileage or travel costs</strong> depending on location. We confirm pricing up front when you request a quote or schedule, so there are no surprises."
+      },
+      {
+        "question": "What kinds of documents can you translate?",
+        "answer": "We translate <strong>official documents</strong> (certified where required) as well as everyday materials\u2014letters, forms, notices, outreach flyers, program handouts, and similar content\u2014with attention to both accuracy and cultural clarity."
+      },
+      {
+        "question": "How quickly will you respond to a quote request?",
+        "answer": "We typically reply to email and contact-form messages within <strong>24 hours on business days</strong>. If your request is urgent, call us\u2014especially for live interpreting needs."
+      },
+      {
+        "question": "Who do you typically work with?",
+        "answer": "We work with <strong>schools and youth programs</strong>, <strong>healthcare and clinics</strong>, <strong>community and social-service organizations</strong>, <strong>churches and Islamic centers</strong>, <strong>social workers</strong>, <strong>legal offices</strong>, and <strong>families</strong>\u2014supporting multilingual and immigrant communities across Maine and remotely."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "intro": "Tell us about your language pair, setting (medical, school, legal, community, etc.), and preferred date or time. We will follow up with next steps and pricing.",
+    "button_label": "Request a quote",
+    "button_href": "contact.html?service=quote"
+  }
+}

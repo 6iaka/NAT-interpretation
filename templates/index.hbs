@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+    {{> header}}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="video home page top.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{hero.title}}</h1>
+            <p class="hero-lead">{{hero.lead}}</p>
+            <div class="hero-cta">
+                <a href="contact.html?service=quote" class="btn btn-primary btn-large">{{hero.cta_primary_label}}</a>
+                <a href="contact.html" class="btn btn-secondary btn-large">{{hero.cta_secondary_label}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who we serve -->
+    <section class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{who_we_serve.title}}</h2>
+                <p>{{{who_we_serve.intro_1}}}</p>
+                <p>{{{who_we_serve.intro_2}}}</p>
+            </div>
+            <div class="grid grid-2 cards-equal-row">
+                <div class="card">
+                    <h3>{{who_we_serve.audiences_title}}</h3>
+                    <p>{{who_we_serve.audiences_intro}}</p>
+                    <ul style="margin-top: 0.75rem; padding-left: 1.25rem; color: var(--text-light); line-height: 1.6;">
+                        {{#each who_we_serve.audiences_list}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <p style="margin-top: 1rem;">{{who_we_serve.audiences_footnote}}</p>
+                </div>
+                <div class="card">
+                    <h3>{{who_we_serve.cultural_title}}</h3>
+                    <p>{{who_we_serve.cultural_p1}}</p>
+                    <p style="margin-top: 1rem;">{{{who_we_serve.cultural_p2}}}</p>
+                    <a href="{{who_we_serve.cultural_cta_href}}" class="btn btn-secondary mt-2">{{who_we_serve.cultural_cta_label}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{how_it_works.title}}</h2>
+                <p>{{how_it_works.intro}}</p>
+            </div>
+            <div class="grid grid-3">
+                {{#each how_it_works.steps}}
+                <div class="step">
+                    <div class="step-number">{{number}}</div>
+                    <h3>{{title}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Specialist Section -->
+    <section class="section featured-specialist">
+        <div class="container">
+            <div class="specialist-content">
+                <div class="specialist-image-wrapper">
+                    <img src="Aminata picture.png" alt="{{specialist.image_alt}}" class="specialist-image">
+                </div>
+                <div class="specialist-info">
+                    <div class="specialist-badge">{{specialist.badge}}</div>
+                    <h2>{{specialist.title}}</h2>
+                    <p class="specialist-role">{{specialist.role}}</p>
+                    <p class="specialist-description">{{specialist.description}}</p>
+                    <div class="specialist-expertise">
+                        {{#each specialist.expertise}}
+                        <div class="expertise-item">
+                            <strong>{{title}}</strong>
+                            <span>{{certification}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <a href="{{specialist.cta_href}}" class="btn btn-primary mt-2">{{specialist.cta_label}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section why-choose-us">
+        <div class="container">
+            <div class="section-title" style="text-align: left;">
+                <h2>{{why_choose.title}}</h2>
+                <p>{{why_choose.intro}}</p>
+            </div>
+            <div class="why-choose-cards">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-body">
+                        <h3>{{lookup why_choose.features.[0] 'title'}}</h3>
+                        <p>{{lookup why_choose.features.[0] 'description'}}</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="feature-body">
+                        <h3>{{lookup why_choose.features.[1] 'title'}}</h3>
+                        <p>{{lookup why_choose.features.[1] 'description'}}</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                        </svg>
+                    </div>
+                    <div class="feature-body">
+                        <h3>{{lookup why_choose.features.[2] 'title'}}</h3>
+                        <p>{{lookup why_choose.features.[2] 'description'}}</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-body">
+                        <h3>{{lookup why_choose.features.[3] 'title'}}</h3>
+                        <p>{{lookup why_choose.features.[3] 'description'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{services_preview.title}}</h2>
+                <p>{{services_preview.intro}}</p>
+            </div>
+            <div class="grid grid-3 cards-equal-row">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>{{lookup services_preview.items.[0] 'title'}}</h3>
+                    <p>{{lookup services_preview.items.[0] 'description'}}</p>
+                    <a href="{{lookup services_preview.items.[0] 'link_href'}}" class="btn btn-secondary">{{lookup services_preview.items.[0] 'link_label'}}</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3>{{lookup services_preview.items.[1] 'title'}}</h3>
+                    <p>{{lookup services_preview.items.[1] 'description'}}</p>
+                    <a href="{{lookup services_preview.items.[1] 'link_href'}}" class="btn btn-secondary">{{lookup services_preview.items.[1] 'link_label'}}</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3>{{lookup services_preview.items.[2] 'title'}}</h3>
+                    <p>{{lookup services_preview.items.[2] 'description'}}</p>
+                    <a href="{{lookup services_preview.items.[2] 'link_href'}}" class="btn btn-secondary">{{lookup services_preview.items.[2] 'link_label'}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{testimonials.title}}</h2>
+                <p>{{testimonials.intro}}</p>
+            </div>
+            <div class="grid grid-3">
+                {{#each testimonials.items}}
+                <div class="testimonial">
+                    <p class="testimonial-text">{{quote}}</p>
+                    <div class="testimonial-author">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-light); display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-weight: 700;">{{initials}}</div>
+                        <div class="testimonial-author-info">
+                            <h4>{{name}}</h4>
+                            <p>{{role}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="section service-areas">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{service_areas.title}}</h2>
+                <p>{{service_areas.intro}}</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="service-area-card">
+                    <div class="service-area-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>{{lookup service_areas.items.[0] 'title'}}</h3>
+                    <p>{{lookup service_areas.items.[0] 'description'}}</p>
+                </div>
+                <div class="service-area-card">
+                    <div class="service-area-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>{{lookup service_areas.items.[1] 'title'}}</h3>
+                    <p>{{lookup service_areas.items.[1] 'description'}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>{{cta.title}}</h2>
+            <p>{{cta.intro}}</p>
+            <a href="{{cta.button_href}}" class="btn btn-primary btn-large cta-button">{{cta.button_label}}</a>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    {{> scripts}}
+</body>
+</html>

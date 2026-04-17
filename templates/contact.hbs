@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+    {{> header}}
+
+    <!-- Page Header -->
+    <section class="hero contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{hero.title}}</h1>
+            <p>{{hero.lead}}</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>{{info.heading}}</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-light);">{{info.intro}}</p>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p><a href="mailto:{{global.email}}">{{global.email}}</a></p>
+                            <p class="contact-info-note">{{info.email_note}}</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{global.phone_link}}">{{global.phone_display}}</a></p>
+                            <p class="contact-info-note">{{{info.phone_note_1}}}</p>
+                            <p class="contact-info-note">{{info.phone_note_2}}</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>{{info.service_area_title}}</h4>
+                            <p>{{global.location}}</p>
+                            <p class="contact-info-note">{{info.service_area_note_1}}</p>
+                            <p class="contact-info-note">{{info.service_area_note_2}}</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>{{info.scheduling_title}}</h4>
+                            <p>{{info.scheduling_description}}</p>
+                            <p class="contact-info-note">{{info.scheduling_note}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>{{form.heading}}</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-light);">{{form.intro}}</p>
+
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" novalidate>
+                        <input type="hidden" name="access_key" value="17d81678-0d0a-43f8-87a2-98a9ae6dfeda">
+                        <input type="hidden" name="subject" value="New quote request from nattranslation.com">
+                        <input type="hidden" name="from_name" value="NAT Translation website">
+                        <input type="hidden" name="redirect" value="false">
+                        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div class="form-group">
+                            <label for="name">{{form.labels.name}} <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="{{form.placeholders.name}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">{{form.labels.email}} <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="{{form.placeholders.email}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">{{form.labels.phone}}</label>
+                            <input type="tel" id="phone" name="phone" placeholder="{{form.placeholders.phone}}">
+                            <small>{{form.helper_text.phone}}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">{{form.labels.service}} <span class="required">*</span></label>
+                            <select id="service" name="service" required>
+                                <option value="">{{form.services_placeholder}}</option>
+                                {{#each form.services_options}}
+                                <option value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="language-pair">{{form.labels.language_pair}} <span class="required">*</span></label>
+                            <input type="text" id="language-pair" name="language-pair" required placeholder="{{form.placeholders.language_pair}}">
+                            <small>{{{form.helper_text.language_pair}}}</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">{{form.labels.message}} <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="{{form.placeholders.message}}"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferred-datetime">{{form.labels.preferred_datetime}}</label>
+                            <input type="text" id="preferred-datetime" name="preferred-datetime" placeholder="{{form.placeholders.preferred_datetime}}">
+                            <small>{{form.helper_text.preferred_datetime}}</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">{{form.submit_label}}</button>
+
+                        <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-light); text-align: center;">
+                            {{form.legal}}
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>{{extras.response_time_title}}</h3>
+                    <p>{{{extras.response_time_html}}}</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>{{extras.free_consultation_title}}</h3>
+                    <p>{{extras.free_consultation_description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    {{> scripts}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+
+            if (service === 'quote') {
+                document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect && urlParams.get('service-type')) {
+                serviceSelect.value = urlParams.get('service-type');
+            }
+        });
+    </script>
+</body>
+</html>

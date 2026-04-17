@@ -1,0 +1,21 @@
+{
+  "name": "nat-interpretation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NAT Interpretation & Translation Services website. Content is edited via a CMS admin panel; pages are rendered from Handlebars templates and JSON content files during the Vercel build.",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx --yes serve dist -l 5173",
+    "watch": "node build.js --watch"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0"
+  }
+}

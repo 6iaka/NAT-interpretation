@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "description": "Contact NAT Interpretation & Translation Services. Phone (207) 385-7813, email contact@nattranslation.com. Request a quote for interpretation or document translation.",
+    "keywords": "contact interpreter Maine, translation quote, NAT translation, Bangor Maine interpreter, 24/7 interpretation",
+    "og_title": "Contact Us - NAT Interpretation & Translation Services",
+    "og_description": "Get in touch for professional interpretation and translation services.",
+    "page_title": "Contact Us - NAT Interpretation & Translation Services, LLC"
+  },
+  "hero": {
+    "title": "Contact Us",
+    "lead": "Get in touch for a free quote or to discuss your language service needs"
+  },
+  "info": {
+    "heading": "Get in Touch",
+    "intro": "We're here to help. Reach out via phone, email, or use the contact form to request a quote or ask questions.",
+    "email_note": "We typically respond within 24 hours on business days",
+    "phone_note_1": "Multilingual phone/video interpretation: <strong>24 hours a day, 7 days a week</strong>",
+    "phone_note_2": "$1.99 per minute for phone/video interpreting; mileage may apply for in-person visits",
+    "service_area_title": "Service Area",
+    "service_area_note_1": "In-person services in the Bangor area and nearby; mileage may apply",
+    "service_area_note_2": "Remote interpreting available nationwide",
+    "scheduling_title": "Email & scheduling",
+    "scheduling_description": "Use the form or email for quotes, document projects, and booking on-site sessions.",
+    "scheduling_note": "For immediate spoken-language help by phone or video, our interpreters are available 24/7 at the number above."
+  },
+  "form": {
+    "heading": "Request a Quote",
+    "intro": "Fill out the form below and we'll get back to you with a detailed quote within 24 hours.",
+    "labels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "service": "Service Needed",
+      "language_pair": "Language Pair",
+      "message": "Message",
+      "preferred_datetime": "Preferred Date/Time"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "(207) 385-7813",
+      "language_pair": "e.g., Bambara → English, Wolof → English, Arabic → English",
+      "message": "Please provide details about your service needs, document type (if applicable), urgency, and any other relevant information...",
+      "preferred_datetime": "e.g., March 15, 2026 at 2:00 PM"
+    },
+    "helper_text": {
+      "phone": "Optional - We'll call if we need clarification",
+      "language_pair": "Specify source and target languages (see <a href=\"services.html#languages\">languages we support</a> for examples)",
+      "preferred_datetime": "Optional - For interpretation services, please specify your preferred date and time"
+    },
+    "services_options": [
+      "Document Translation",
+      "Medical Interpretation",
+      "Education Interpretation",
+      "Court Interpretation",
+      "Conference Interpretation",
+      "Community, faith-based, or family",
+      "Social services / case management",
+      "Cultural / community language support",
+      "Other"
+    ],
+    "services_placeholder": "Select a service...",
+    "submit_label": "Send Message",
+    "legal": "By submitting this form, you agree to be contacted by NAT Interpretation & Translation Services, LLC."
+  },
+  "extras": {
+    "response_time_title": "Response Time",
+    "response_time_html": "We typically respond to email and form messages within 24 hours on business days. For urgent spoken-language support by phone or video, call <a href=\"tel:+12073857813\">(207) 385-7813</a>\u201424/7 multilingual interpreting is available at $1.99 per minute.",
+    "free_consultation_title": "Free Consultation",
+    "free_consultation_description": "Not sure which service you need? We offer free consultations to help determine the best language solution for your specific situation."
+  }
+}

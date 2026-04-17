@@ -1,17 +1,6 @@
-# OS Files
+node_modules/
+dist/
+.vercel
 .DS_Store
-Thumbs.db
-
-# Editor Files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
+.env
+.env.local
