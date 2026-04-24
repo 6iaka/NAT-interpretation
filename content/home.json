@@ -64,7 +64,7 @@
     "description": "With extensive expertise in interpretation and translation, Aminata brings deep cultural sensitivity to every assignment. She is a trusted partner for schools, healthcare teams, community and faith-based groups, social services, legal settings, and families—helping people connect across African languages and many other language pairs throughout Maine and beyond.",
     "expertise": [
       { "title": "Medical Interpretation", "certification": "HIPAA Certified" },
-      { "title": "Court Interpretation", "certification": "Federally Certified" },
+      { "title": "Court Interpretation", "certification": "Certified" },
       { "title": "Document Translation", "certification": "Certified & Notarized" }
     ],
     "cta_label": "Contact Us",
@@ -155,9 +155,11 @@
     ]
   },
   "cta": {
-    "title": "Ready to Get Started?",
-    "intro": "Contact us today for a free quote or to discuss your language service needs.",
-    "button_label": "Request a Quote",
-    "button_href": "contact.html?service=quote"
+    "title": "Need an Interpreter Fast?",
+    "intro": "Phone and video interpretation is available 24/7 at $1.99 per minute. Call now to get connected, or request a quote for scheduled work.",
+    "button_label": "Call (207) 385-7813",
+    "button_href": "tel:+12073857813",
+    "button_secondary_label": "Request a Quote",
+    "button_secondary_href": "contact.html?service=quote"
   }
 }

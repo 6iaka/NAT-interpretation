@@ -431,6 +431,26 @@ nav {
     opacity: 1 !important;
 }
 
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cta-section .btn-secondary.cta-button {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: none !important;
+}
+
+.cta-section .btn-secondary.cta-button:hover {
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
 .cta-button:hover {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
     color: white !important;

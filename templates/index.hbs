@@ -269,7 +269,12 @@
         <div class="container">
             <h2>{{cta.title}}</h2>
             <p>{{cta.intro}}</p>
-            <a href="{{cta.button_href}}" class="btn btn-primary btn-large cta-button">{{cta.button_label}}</a>
+            <div class="cta-actions">
+                <a href="{{cta.button_href}}" class="btn btn-primary btn-large cta-button">{{cta.button_label}}</a>
+                {{#if cta.button_secondary_label}}
+                <a href="{{cta.button_secondary_href}}" class="btn btn-secondary btn-large cta-button">{{cta.button_secondary_label}}</a>
+                {{/if}}
+            </div>
         </div>
     </section>
 
