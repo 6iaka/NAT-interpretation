@@ -70,16 +70,34 @@ module.exports = async (req, res) => {
       '<p>This window must be opened from the admin panel. Please close it and try again.</p>';
     return;
   }
+  var announceTimer = null;
+  var giveUpTimer = null;
+  function done() {
+    if (announceTimer) clearInterval(announceTimer);
+    if (giveUpTimer) clearTimeout(giveUpTimer);
+    window.removeEventListener('message', receive, false);
+  }
   function receive(e) {
     if (!e.data || typeof e.data !== 'string') return;
     if (e.data.indexOf('authorizing:github') !== 0) return;
     window.opener.postMessage(message, e.origin || '*');
-    window.removeEventListener('message', receive, false);
-    setTimeout(function () { window.close(); }, 250);
+    done();
+    setTimeout(function () { window.close(); }, 300);
   }
   window.addEventListener('message', receive, false);
-  // Signal the opener that we are ready to send the token.
-  window.opener.postMessage('authorizing:github', '*');
+  // Announce readiness every 100ms until the opener echoes it back.
+  // Decap attaches its message listener after opening the popup, so a
+  // one-shot announcement at load time can race ahead of the listener.
+  announceTimer = setInterval(function () {
+    if (window.opener && !window.opener.closed) {
+      window.opener.postMessage('authorizing:github', '*');
+    }
+  }, 100);
+  giveUpTimer = setTimeout(function () {
+    done();
+    document.body.innerHTML =
+      '<p>Login timed out. Please close this window and try again.</p>';
+  }, 15000);
 })();
 </script>
 </body></html>`);
