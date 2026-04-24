@@ -1,97 +1,4 @@
 {
-  "seo": {
-    "description": "NAT Interpretation & Translation Services, LLC — Interpretation, document translation, and culturally responsive support for schools, healthcare, community organizations, faith communities, social services, legal offices, and families. Bambara, Wolof, Arabic, Spanish, and many other languages. Maine-based; remote services available.",
-    "keywords": "interpretation services, African languages interpreter, Maine translation, school interpreter, medical interpretation, community interpretation, Islamic center interpreter, document translation, Bangor Maine",
-    "og_title": "NAT Interpretation & Translation Services, LLC",
-    "og_description": "Interpretation, document translation, and culturally responsive communication for multilingual communities—schools, healthcare, community and faith organizations, social services, legal offices, and families.",
-    "twitter_description": "Interpretation, document translation, and culturally responsive communication for multilingual communities across African and world languages.",
-    "page_title": "NAT Interpretation & Translation Services, LLC | Professional Language Services"
-  },
-  "hero": {
-    "title": "Professional Interpretation & Translation",
-    "lead": "Accurate, respectful language access for multilingual communities—in Maine and remotely, whenever you need it.",
-    "cta_primary_label": "Request a Quote",
-    "cta_secondary_label": "Contact Us"
-  },
-  "who_we_serve": {
-    "title": "Who We Serve",
-    "intro_1": "<strong>NAT Interpretation &amp; Translation Services</strong> centers on interpretation, document translation, and culturally responsive communication for multilingual communities—including immigrant, refugee, African diaspora, and other multilingual populations.",
-    "intro_2": "We help schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many others worldwide</strong>.",
-    "audiences_title": "Primary audiences",
-    "audiences_intro": "We regularly support:",
-    "audiences_list": [
-      "Schools and youth programs",
-      "Healthcare providers and clinics",
-      "Community and social-service organizations",
-      "Churches and Islamic centers",
-      "Social workers and case managers",
-      "Legal offices",
-      "Families and individuals"
-    ],
-    "audiences_footnote": "On-site and remote sessions for appointments, meetings, intakes, school conferences, community events, and case management.",
-    "cultural_title": "Cultural clarity, not just words",
-    "cultural_p1": "Culturally informed language support helps your organization communicate with clarity and respect—whether that is spoken interpretation, written materials, or outreach that lands the right way in the community.",
-    "cultural_p2": "We work across a wide range of <strong>African languages</strong> and <strong>world languages</strong>. See the full list on our Services page.",
-    "cultural_cta_label": "Languages we support",
-    "cultural_cta_href": "services.html#languages"
-  },
-  "how_it_works": {
-    "title": "How It Works",
-    "intro": "Getting professional language services is simple and straightforward. We've streamlined our process to make it easy for you.",
-    "steps": [
-      {
-        "number": "1",
-        "title": "Request a Quote",
-        "description": "Contact us with your service needs, language pair, and preferred date. We'll respond within 24 hours with a detailed quote."
-      },
-      {
-        "number": "2",
-        "title": "We Match You",
-        "description": "Our team matches you with a certified interpreter or translator who specializes in your field and language pair."
-      },
-      {
-        "number": "3",
-        "title": "Receive Service",
-        "description": "Get accurate, professional interpretation or translation services delivered on time, every time."
-      }
-    ]
-  },
-  "specialist": {
-    "image_alt": "Aminata - Lead Specialist",
-    "badge": "Our Lead Specialist",
-    "title": "Meet Aminata",
-    "role": "Certified Interpreter & Translator",
-    "description": "With extensive expertise in interpretation and translation, Aminata brings deep cultural sensitivity to every assignment. She is a trusted partner for schools, healthcare teams, community and faith-based groups, social services, legal settings, and families—helping people connect across African languages and many other language pairs throughout Maine and beyond.",
-    "expertise": [
-      { "title": "Medical Interpretation", "certification": "HIPAA Certified" },
-      { "title": "Court Interpretation", "certification": "Certified" },
-      { "title": "Document Translation", "certification": "Certified & Notarized" }
-    ],
-    "cta_label": "Contact Us",
-    "cta_href": "contact.html"
-  },
-  "why_choose": {
-    "title": "Why Choose NAT Interpretation",
-    "intro": "We're committed to excellence in every interaction. Here's what sets us apart from the rest.",
-    "features": [
-      {
-        "title": "Confidentiality",
-        "description": "Your documents and conversations are handled with the utmost privacy and security. We maintain strict confidentiality protocols."
-      },
-      {
-        "title": "Accuracy",
-        "description": "Our certified professionals ensure precise translations and interpretations, maintaining the original meaning and context."
-      },
-      {
-        "title": "Fast Turnaround",
-        "description": "We understand urgency. Rush services available for time-sensitive documents and last-minute interpretation needs."
-      },
-      {
-        "title": "Trusted Expertise",
-        "description": "Experienced interpreters and translators for healthcare, schools, courts, conferences, community settings, and official documents—with a focus on accuracy and respect for every participant."
-      }
-    ]
-  },
   "services_preview": {
     "title": "Our Services",
     "intro": "Our business model is centered on interpretation, document translation, and culturally responsive communication support—so multilingual communities get accurate, respectful language access.",
@@ -115,6 +22,59 @@
         "link_href": "services.html#cultural-support"
       }
     ]
+  },
+  "why_choose": {
+    "title": "Why Choose NAT Interpretation",
+    "intro": "We're committed to excellence in every interaction. Here's what sets us apart from the rest.",
+    "features": [
+      {
+        "title": "Confidentiality",
+        "description": "Your documents and conversations are handled with the utmost privacy and security. We maintain strict confidentiality protocols."
+      },
+      {
+        "title": "Accuracy",
+        "description": "Our certified professionals ensure precise translations and interpretations, maintaining the original meaning and context."
+      },
+      {
+        "title": "Fast Turnaround",
+        "description": "We understand urgency. Rush services available for time-sensitive documents and last-minute interpretation needs."
+      },
+      {
+        "title": "Trusted Expertise",
+        "description": "Experienced interpreters and translators for healthcare, schools, courts, conferences, community settings, and official documents—with a focus on accuracy and respect for every participant."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Need an Interpreter Fast?",
+    "intro": "Phone and video interpretation is available 24/7 at $1.99 per minute. Call now to get connected, or request a quote for scheduled work.",
+    "button_label": "Call (207) 385-7813",
+    "button_href": "tel:+12073857813",
+    "button_secondary_label": "Request a Quote",
+    "button_secondary_href": "contact.html?service=quote"
+  },
+  "specialist": {
+    "image_alt": "Aminata - Lead Specialist",
+    "badge": "Our Lead Specialist",
+    "title": "Meet Aminata",
+    "role": "Certified Interpreter & Translator",
+    "description": "With extensive expertise in interpretation and translation, Aminata brings deep cultural sensitivity to every assignment. She is a trusted partner for schools, healthcare teams, community and faith-based groups, social services, legal settings, and families—helping people connect across African languages and many other language pairs throughout Maine and beyond.",
+    "expertise": [
+      {
+        "title": "Medical Interpretation",
+        "certification": "HIPAA Certified"
+      },
+      {
+        "title": "Court Interpretation",
+        "certification": "Certified"
+      },
+      {
+        "title": "Document Translation",
+        "certification": "Certified & Notarized"
+      }
+    ],
+    "cta_label": "Contact Us",
+    "cta_href": "contact.html"
   },
   "testimonials": {
     "title": "What Our Clients Say",
@@ -140,6 +100,12 @@
       }
     ]
   },
+  "hero": {
+    "title": "Professional Interpretation ",
+    "lead": "Accurate, respectful language access for multilingual communities—in Maine and remotely, whenever you need it.",
+    "cta_primary_label": "Request a Quote",
+    "cta_secondary_label": "Contact Us"
+  },
   "service_areas": {
     "title": "Service Areas",
     "intro": "Whether you're in Bangor or across the country, we're here to help. We serve clients both locally and remotely.",
@@ -154,12 +120,55 @@
       }
     ]
   },
-  "cta": {
-    "title": "Need an Interpreter Fast?",
-    "intro": "Phone and video interpretation is available 24/7 at $1.99 per minute. Call now to get connected, or request a quote for scheduled work.",
-    "button_label": "Call (207) 385-7813",
-    "button_href": "tel:+12073857813",
-    "button_secondary_label": "Request a Quote",
-    "button_secondary_href": "contact.html?service=quote"
+  "seo": {
+    "description": "NAT Interpretation & Translation Services, LLC — Interpretation, document translation, and culturally responsive support for schools, healthcare, community organizations, faith communities, social services, legal offices, and families. Bambara, Wolof, Arabic, Spanish, and many other languages. Maine-based; remote services available.",
+    "keywords": "interpretation services, African languages interpreter, Maine translation, school interpreter, medical interpretation, community interpretation, Islamic center interpreter, document translation, Bangor Maine",
+    "og_title": "NAT Interpretation & Translation Services, LLC",
+    "og_description": "Interpretation, document translation, and culturally responsive communication for multilingual communities—schools, healthcare, community and faith organizations, social services, legal offices, and families.",
+    "twitter_description": "Interpretation, document translation, and culturally responsive communication for multilingual communities across African and world languages.",
+    "page_title": "NAT Interpretation & Translation Services, LLC | Professional Language Services"
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "intro": "Getting professional language services is simple and straightforward. We've streamlined our process to make it easy for you.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Request a Quote",
+        "description": "Contact us with your service needs, language pair, and preferred date. We'll respond within 24 hours with a detailed quote."
+      },
+      {
+        "number": "2",
+        "title": "We Match You",
+        "description": "Our team matches you with a certified interpreter or translator who specializes in your field and language pair."
+      },
+      {
+        "number": "3",
+        "title": "Receive Service",
+        "description": "Get accurate, professional interpretation or translation services delivered on time, every time."
+      }
+    ]
+  },
+  "who_we_serve": {
+    "cultural_cta_label": "Languages we support",
+    "audiences_title": "Primary audiences",
+    "audiences_list": [
+      "Schools and youth programs",
+      "Healthcare providers and clinics",
+      "Community and social-service organizations",
+      "Churches and Islamic centers",
+      "Social workers and case managers",
+      "Legal offices",
+      "Families and individuals"
+    ],
+    "audiences_footnote": "On-site and remote sessions for appointments, meetings, intakes, school conferences, community events, and case management.",
+    "cultural_cta_href": "services.html#languages",
+    "title": "Who We Serve",
+    "cultural_title": "Cultural clarity, not just words",
+    "audiences_intro": "We regularly support:",
+    "intro_1": "<strong>NAT Interpretation &amp; Translation Services</strong> centers on interpretation, document translation, and culturally responsive communication for multilingual communities—including immigrant, refugee, African diaspora, and other multilingual populations.",
+    "cultural_p1": "Culturally informed language support helps your organization communicate with clarity and respect—whether that is spoken interpretation, written materials, or outreach that lands the right way in the community.",
+    "intro_2": "We help schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many others worldwide</strong>.",
+    "cultural_p2": "We work across a wide range of <strong>African languages</strong> and <strong>world languages</strong>. See the full list on our Services page."
   }
 }
