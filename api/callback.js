@@ -91,10 +91,28 @@ module.exports = async (req, res) => {
     if (giveUpTimer) clearTimeout(giveUpTimer);
     window.removeEventListener('message', receive, false);
   }
+  function describe(data) {
+    if (typeof data === 'string') return 'str:' + data.slice(0, 120);
+    try { return 'obj:' + JSON.stringify(data).slice(0, 200); }
+    catch (_) { return 'obj:[unserializable]'; }
+  }
+  function looksLikeHandshake(data) {
+    if (typeof data === 'string') {
+      return data.indexOf('authorizing:github') === 0;
+    }
+    if (data && typeof data === 'object') {
+      // Ignore noisy framework/devtool messages: only treat as handshake
+      // when the payload explicitly references the provider.
+      var s = '';
+      try { s = JSON.stringify(data); } catch (_) { return false; }
+      return s.indexOf('authorizing:github') !== -1 ||
+             s.indexOf('"github"') !== -1 && s.indexOf('authorizing') !== -1;
+    }
+    return false;
+  }
   function receive(e) {
-    log('received message from ' + e.origin + ': ' + String(e.data).slice(0, 80));
-    if (!e.data || typeof e.data !== 'string') return;
-    if (e.data.indexOf('authorizing:github') !== 0) return;
+    log('received from ' + e.origin + ' ' + describe(e.data));
+    if (!looksLikeHandshake(e.data)) return;
     try {
       window.opener.postMessage(message, e.origin || '*');
       log('sent authorization payload to opener');
