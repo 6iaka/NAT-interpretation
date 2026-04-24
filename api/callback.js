@@ -64,16 +64,22 @@ module.exports = async (req, res) => {
 <p>Finishing login. You can close this window if it doesn't close automatically.</p>
 <script>
 (function () {
-  function send() {
-    if (!window.opener) return;
-    window.opener.postMessage(${JSON.stringify(message)}, '*');
+  var message = ${JSON.stringify(message)};
+  if (!window.opener) {
+    document.body.innerHTML =
+      '<p>This window must be opened from the admin panel. Please close it and try again.</p>';
+    return;
   }
-  window.addEventListener('message', function (event) {
-    if (event.data === 'authorizing:github') {
-      send();
-    }
-  }, false);
-  send();
+  function receive(e) {
+    if (!e.data || typeof e.data !== 'string') return;
+    if (e.data.indexOf('authorizing:github') !== 0) return;
+    window.opener.postMessage(message, e.origin || '*');
+    window.removeEventListener('message', receive, false);
+    setTimeout(function () { window.close(); }, 250);
+  }
+  window.addEventListener('message', receive, false);
+  // Signal the opener that we are ready to send the token.
+  window.opener.postMessage('authorizing:github', '*');
 })();
 </script>
 </body></html>`);
