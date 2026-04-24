@@ -2,7 +2,11 @@ backend:
   name: github
   repo: 6iaka/NAT-interpretation
   branch: main
-  base_url: https://nattranslation.com
+  # base_url must match the origin of the admin page exactly, because
+  # Decap's OAuth handshake rejects postMessage events whose origin
+  # doesn't equal base_url. The site redirects apex -> www, so the
+  # canonical admin origin is https://www.nattranslation.com.
+  base_url: https://www.nattranslation.com
   auth_endpoint: api/auth
 
 # Rebuild & redeploy on Vercel happen automatically when Decap commits.
@@ -14,9 +18,9 @@ media_folder: "assets/img"
 public_folder: "/assets/img"
 
 # A short note shown in the admin shell.
-site_url: https://nattranslation.com
-display_url: https://nattranslation.com
-logo_url: https://nattranslation.com/updated%20logo.jpg
+site_url: https://www.nattranslation.com
+display_url: https://www.nattranslation.com
+logo_url: https://www.nattranslation.com/updated%20logo.jpg
 
 # Helpful hint for fields that accept inline HTML.
 # (Displayed in the "Hint" text we attach below.)

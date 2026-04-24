@@ -57,94 +57,50 @@ module.exports = async (req, res) => {
   //   authorization:<provider>:<success|error>:<json>
   const message = `authorization:github:${messageType}:${messagePayload}`;
 
-  const buildTag = `build ${new Date().toISOString()}`;
-
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   res.status(200).send(`<!DOCTYPE html>
 <html><head><title>Authorizing…</title><meta charset="utf-8"></head>
 <body style="font-family:system-ui,sans-serif;padding:1.5rem;line-height:1.5">
 <p id="msg">Finishing login…</p>
-<pre id="log" style="font-size:12px;background:#f4f4f6;padding:.75rem;border-radius:.5rem;white-space:pre-wrap;max-height:40vh;overflow:auto"></pre>
-<p style="font-size:11px;color:#888">${buildTag}</p>
 <script>
 (function () {
   var message = ${JSON.stringify(message)};
-  var logEl = document.getElementById('log');
   var msgEl = document.getElementById('msg');
-  function log(line) {
-    var t = new Date().toISOString().slice(11, 23);
-    logEl.textContent += '[' + t + '] ' + line + '\\n';
-  }
-  log('popup loaded');
   if (!window.opener || window.opener.closed) {
-    msgEl.textContent = 'This window must be opened from the admin panel.';
-    log('ERROR: window.opener is null or closed');
+    msgEl.textContent = 'This window must be opened from the admin panel. Please close it and try again.';
     return;
   }
-  log('window.opener OK');
   var announceTimer = null;
   var giveUpTimer = null;
-  var ticks = 0;
   function done() {
     if (announceTimer) clearInterval(announceTimer);
     if (giveUpTimer) clearTimeout(giveUpTimer);
     window.removeEventListener('message', receive, false);
   }
-  function describe(data) {
-    if (typeof data === 'string') return 'str:' + data.slice(0, 120);
-    try { return 'obj:' + JSON.stringify(data).slice(0, 200); }
-    catch (_) { return 'obj:[unserializable]'; }
-  }
-  function looksLikeHandshake(data) {
-    if (typeof data === 'string') {
-      return data.indexOf('authorizing:github') === 0;
-    }
-    if (data && typeof data === 'object') {
-      // Ignore noisy framework/devtool messages: only treat as handshake
-      // when the payload explicitly references the provider.
-      var s = '';
-      try { s = JSON.stringify(data); } catch (_) { return false; }
-      return s.indexOf('authorizing:github') !== -1 ||
-             s.indexOf('"github"') !== -1 && s.indexOf('authorizing') !== -1;
-    }
-    return false;
-  }
   function receive(e) {
-    log('received from ' + e.origin + ' ' + describe(e.data));
-    if (!looksLikeHandshake(e.data)) return;
+    // Decap echoes the handshake string back to the popup once it has
+    // registered its authorization listener. Ignore anything else.
+    if (typeof e.data !== 'string' || e.data.indexOf('authorizing:github') !== 0) return;
     try {
       window.opener.postMessage(message, e.origin || '*');
-      log('sent authorization payload to opener');
       msgEl.textContent = 'Signed in. You can close this window.';
-    } catch (err) {
-      log('ERROR posting token: ' + err.message);
-    }
+    } catch (_) {}
     done();
-    setTimeout(function () { try { window.close(); } catch (_) {} }, 400);
+    setTimeout(function () { try { window.close(); } catch (_) {} }, 300);
   }
   window.addEventListener('message', receive, false);
+  // Decap attaches its message listener after opening the popup, so a
+  // one-shot announcement at load time can race ahead of the listener.
+  // Keep announcing until we get an echo back, then deliver the token.
   announceTimer = setInterval(function () {
-    ticks++;
-    if (!window.opener || window.opener.closed) {
-      log('opener went away after ' + ticks + ' ticks');
-      done();
-      msgEl.textContent = 'The admin window was closed. Please try again.';
-      return;
-    }
-    try {
-      window.opener.postMessage('authorizing:github', '*');
-    } catch (err) {
-      log('ERROR announcing: ' + err.message);
-    }
-    if (ticks === 1 || ticks % 10 === 0) {
-      log('announced authorizing:github (tick ' + ticks + ')');
+    if (window.opener && !window.opener.closed) {
+      try { window.opener.postMessage('authorizing:github', '*'); } catch (_) {}
     }
   }, 100);
   giveUpTimer = setTimeout(function () {
     done();
-    msgEl.textContent = 'Login timed out. The admin window is not responding. Close this and try again.';
-    log('gave up after ' + ticks + ' ticks');
+    msgEl.textContent = 'Login timed out. Please close this window and try again.';
   }, 15000);
 })();
 </script>
