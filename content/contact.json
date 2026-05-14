@@ -8,7 +8,9 @@
   },
   "hero": {
     "title": "Contact Us",
-    "lead": "Get in touch for a free quote or to discuss your language service needs"
+    "lead": "Get in touch for a free quote or to discuss your language service needs",
+    "image": "/assets/img/services-hero-globe.jpg",
+    "image_alt": "Close-up of a globe with country names in multiple languages, evoking world languages and reaching out across communities"
   },
   "info": {
     "heading": "Get in Touch",
@@ -20,8 +22,14 @@
     "scheduling_description": "Use the form or email for quotes, document projects, and booking on-site sessions.",
     "email_note": "We typically respond within 24 hours on business days",
     "phone_note_1": "Multilingual phone/video interpretation: <strong>24 hours a day, 7 days a week</strong>",
-    "phone_note_2": "$1.99 per minute for phone/video interpreting; mileage may apply for in-person visits",
-    "scheduling_note": "For immediate spoken-language help by phone or video, our interpreters are available 24/7 at the number above."
+    "phone_note_2": "Rates for phone and video interpreting are confirmed when you call or request a quote; mileage may apply for in-person visits.",
+    "scheduling_note": "For immediate spoken-language help by phone or video, our interpreters are available 24/7 at the number above.",
+    "map": {
+      "iframe_title": "Map showing NAT Interpretation & Translation Services — 96 Harlow St, Bangor, Maine",
+      "embed_url": "https://maps.google.com/maps?q=NAT+Interpretation+%26+Translation+Services,+96+Harlow+St,+Bangor,+ME+04401&output=embed",
+      "open_url": "https://www.google.com/maps/place/NAT+Interpretation+%26+Translation+Services/@44.8035381,-68.7738278,17z/data=!4m6!3m5!1s0x4cae4b57cb0c2c31:0x5e2411898872f188!8m2!3d44.8035381!4d-68.7712529!16s%2Fg%2F11z5cpkc56",
+      "open_label": "Open in Google Maps"
+    }
   },
   "form": {
     "placeholders": {
@@ -65,7 +73,7 @@
   },
   "extras": {
     "response_time_title": "Response Time",
-    "response_time_html": "We typically respond to email and form messages within 24 hours on business days. For urgent spoken-language support by phone or video, call <a href=\"tel:+12073857813\">(207) 385-7813</a>—24/7 multilingual interpreting is available at $1.99 per minute.",
+    "response_time_html": "We typically respond to email and form messages within 24 hours on business days. For urgent spoken-language support by phone or video, call <a href=\"tel:+12073857813\">(207) 385-7813</a>—multilingual interpreters are available 24/7.",
     "free_consultation_title": "Free Consultation",
     "free_consultation_description": "Not sure which service you need? We offer free consultations to help determine the best language solution for your specific situation."
   }

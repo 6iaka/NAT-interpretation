@@ -48,6 +48,7 @@ const STATIC_ASSETS = [
   'updated logo.jpg',
   'Aminata picture.png',
   'video home page top.mp4',
+  'pexels-7147203-discussion.mp4',
   'robots.txt',
   'favicon.ico'
 ];
@@ -74,6 +75,51 @@ function registerPartials() {
 function registerHelpers() {
   // Compare equality in templates: {{#if (eq active 'home')}}...{{/if}}
   Handlebars.registerHelper('eq', (a, b) => a === b);
+
+  // Render a 0-based index as a 1-based number: 0 -> 1, 1 -> 2, etc.
+  Handlebars.registerHelper('numberPrefix', (index) => {
+    const n = Number(index);
+    if (!Number.isFinite(n)) return '';
+    return String(n + 1);
+  });
+}
+
+/** JSON-LD for Google / rich results (Contact page only). */
+function buildLocalBusinessSchemaJson(global) {
+  const base = (global.site_url || 'https://www.nattranslation.com').replace(/\/$/, '');
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: global.business_name,
+    url: base,
+    telephone: global.phone_link,
+    email: global.email,
+    image: `${base}/updated%20logo.jpg`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: global.street_address || global.location,
+      addressLocality: global.address_city,
+      addressRegion: global.address_region,
+      postalCode: global.postal_code,
+      addressCountry: global.address_country || 'US'
+    }
+  };
+  if (global.footer && global.footer.linkedin_url) {
+    schema.sameAs = [global.footer.linkedin_url];
+  }
+  const tag =
+    global.footer && global.footer.tagline
+      ? String(global.footer.tagline).replace(/\s+/g, ' ').trim()
+      : '';
+  if (tag) schema.description = tag;
+  /* Drop empty optional address pieces */
+  if (schema.address) {
+    ['streetAddress', 'addressLocality', 'addressRegion', 'postalCode'].forEach((k) => {
+      if (!schema.address[k]) delete schema.address[k];
+    });
+    if (Object.keys(schema.address).length <= 1) delete schema.address;
+  }
+  return JSON.stringify(schema);
 }
 
 function loadJson(file) {
@@ -95,6 +141,10 @@ function buildPage(page, global) {
     global,
     active: page.content
   };
+
+  if (page.content === 'contact') {
+    context.localBusinessSchema = buildLocalBusinessSchemaJson(global);
+  }
 
   const html = template(context);
   const outputPath = path.join(DIST_DIR, page.output);

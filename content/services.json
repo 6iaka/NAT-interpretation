@@ -1,75 +1,35 @@
 {
   "interpretation": {
     "title": "Interpretation Services",
-    "intro": "On-site and remote interpreting for the appointments, meetings, and moments that shape people’s lives—including medical, legal, education, and community settings. Details on availability and rates are below.",
+    "intro": "On-site and remote interpreting for the appointments, meetings, and moments that shape people’s lives—across medical, legal, education, and community settings.",
     "items": [
       {
-        "id": "community",
-        "icon": "people",
-        "title": "Schools, healthcare, community & family",
-        "html": "<p>We focus on helping schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many other languages</strong> used around the world.</p><p><strong>Primary audiences</strong> include schools and youth programs, healthcare and clinics, community and social-service organizations, churches, Islamic centers, social workers, legal offices, and families.</p><p>Our interpreters support <strong>on-site and remote</strong> sessions for appointments, meetings, intakes, school conferences, community events, and case management sessions.</p><p><strong>24/7 multilingual interpretation</strong> (phone/video) is available at <strong>$1.99 per minute</strong>. For in-person assignments, <strong>mileage may apply</strong>—we will confirm when you request a quote or book. Our team is friendly, professional, and committed to seamless communication.</p>"
+        "title": "On-Site Interpretation",
+        "html": "<p>In-person interpreters for the appointments and meetings that matter most—<strong>medical visits, hospital and clinic settings, court hearings, depositions, parent–teacher and IEP conferences, conferences and large events,</strong> and community or faith-based gatherings.</p><p>Our in-person team includes <strong>HIPAA-trained medical interpreters</strong> and <strong>certified court interpreters</strong> where required. Mileage may apply depending on location—we will confirm pricing when you book.</p>"
       },
       {
-        "id": "medical",
-        "icon": "medical",
-        "title": "Medical Interpretation",
-        "html": "<p>Certified medical interpreters ensure accurate communication between healthcare providers and patients, maintaining patient confidentiality and cultural sensitivity.</p><ul><li>Doctor appointments and consultations</li><li>Hospital visits and emergency room interpretation</li><li>Medical procedures and surgeries</li><li>Mental health counseling sessions</li><li>Physical therapy and rehabilitation</li><li>Pharmacy consultations</li><li>Medical billing and insurance discussions</li></ul><p style=\"margin-top: 1rem;\"><strong>HIPAA Compliant:</strong> All our medical interpreters are trained in HIPAA regulations and maintain strict patient confidentiality.</p>"
-      },
-      {
-        "id": "education",
-        "icon": "education",
-        "title": "Education Interpretation",
-        "html": "<p>Supporting students and families in educational settings with professional interpretation services for meetings, assessments, and school events.</p><ul><li>Parent-teacher conferences</li><li>Individualized Education Program (IEP) meetings</li><li>School enrollment and registration</li><li>Special education assessments</li><li>Disciplinary hearings</li><li>Graduation ceremonies and school events</li><li>College admissions interviews</li></ul><p style=\"margin-top: 1rem;\"><strong>Educational Expertise:</strong> Our interpreters understand educational terminology and special education processes.</p>"
-      },
-      {
-        "id": "court",
-        "icon": "court",
-        "title": "Court Interpretation",
-        "html": "<p>Certified court interpreters provide accurate, impartial interpretation for legal proceedings, maintaining the integrity of the judicial process.</p><ul><li>Criminal court hearings and trials</li><li>Civil court proceedings</li><li>Depositions and sworn statements</li><li>Arbitration and mediation</li><li>Probation and parole meetings</li><li>Attorney-client consultations</li><li>Immigration court hearings</li></ul><p style=\"margin-top: 1rem;\"><strong>Certified &amp; Sworn:</strong> Our court interpreters are certified and can provide sworn interpretation services as required by the court.</p>"
-      },
-      {
-        "id": "conference",
-        "icon": "conference",
-        "title": "Conference Interpretation",
-        "html": "<p>Professional conference interpretation services for business meetings, international conferences, and large-scale events.</p><ul><li>Simultaneous interpretation (with equipment)</li><li>Consecutive interpretation</li><li>Business meetings and negotiations</li><li>International conferences and conventions</li><li>Training sessions and workshops</li><li>Webinars and virtual events</li><li>Press conferences and media events</li></ul><p style=\"margin-top: 1rem;\"><strong>Equipment Available:</strong> We can provide interpretation equipment including headsets, microphones, and booths for large events.</p>"
-      },
-      {
-        "id": "modalities",
-        "icon": "modalities",
-        "title": "Interpretation Modalities",
-        "html": "<ul><li><strong>In-Person:</strong> On-site interpretation at your location</li><li><strong>Over-the-Phone (OPI):</strong> Immediate access to interpreters via phone</li><li><strong>Video Remote (VRI):</strong> Secure video interpretation via computer or tablet</li><li><strong>On-Demand:</strong> Same-day and emergency services available</li></ul>"
+        "title": "Phone & Video Interpretation (24/7)",
+        "html": "<p>Immediate access to multilingual interpreters around the clock by <strong>secure phone or video—available 24/7.</strong> Ideal for time-sensitive medical questions, on-call legal consultations, mental-health check-ins, school emergencies, or quick follow-ups when an in-person interpreter is not practical.</p><p><strong>Video Remote Interpretation (VRI)</strong> sessions can be conducted from any computer or tablet, and <strong>Over-the-Phone Interpretation (OPI)</strong> connects you to an interpreter in seconds.</p>"
       }
     ]
   },
   "inline_cta": {
     "headline": "Book interpreting, request translation, or ask a question",
-    "subtext": "24/7 phone & video interpretation·",
+    "subtext": "24/7 phone & video interpreting · Quotes for documents and on-site visits",
     "quote_label": "Request a quote",
     "contact_label": "Contact us"
   },
   "document_translation": {
     "title": "Document Translation",
-    "intro": "Certified translation for official documents used by government agencies, schools, courts, and immigration offices—plus everyday written materials for organizations and families. All of it supports culturally clear communication for multilingual communities.",
+    "intro": "Certified translation for official documents—plus everyday written materials—delivered with linguistic accuracy and cultural clarity for multilingual communities.",
     "items": [
       {
-        "icon": "document",
-        "title": "Letters, forms, notices & outreach",
-        "html": "<p>Document translation can cover letters, forms, notices, outreach materials, flyers, program documents, and other written communication that needs both <strong>linguistic accuracy</strong> and <strong>cultural clarity</strong>—so your message is understood as intended.</p>"
+        "title": "Official & Certified Documents",
+        "html": "<p>Certified translations for documents that need to be accepted by government agencies, courts, schools, and immigration offices. Common documents include <strong>birth and death certificates, passports and IDs, academic transcripts and diplomas, marriage and divorce records, medical reports, legal contracts,</strong> and <strong>immigration paperwork.</strong></p><p>Every translation includes a <strong>certificate of accuracy</strong> and can be <strong>notarized on request</strong>—accepted by USCIS, universities, courts, and government agencies.</p>"
       },
       {
-        "icon": "document-lines",
-        "title": "Official Document Translation",
-        "html": "<p>We provide certified translations for a wide range of official documents:</p><ul><li>Birth certificates and death certificates</li><li>Passports and identification documents</li><li>Academic transcripts and diplomas</li><li>Marriage certificates and divorce decrees</li><li>Medical records and reports</li><li>Legal documents and contracts</li><li>Business documents and certificates</li><li>Immigration documents</li></ul><p style=\"margin-top: 1rem;\"><strong>Certification &amp; Notarization:</strong> All translations include a certificate of accuracy and can be notarized upon request. Our certified translations are accepted by USCIS, universities, courts, and government agencies.</p>"
-      },
-      {
-        "icon": "process",
-        "title": "Translation Process",
-        "html": "<ul><li>Submit your document via secure upload or in-person</li><li>Receive a detailed quote within 24 hours</li><li>Professional translation by certified linguists</li><li>Quality assurance review by second translator</li><li>Certification and notarization (if required)</li><li>Secure delivery via email or mail</li></ul>"
-      },
-      {
-        "icon": "clock",
-        "title": "Turnaround Times",
-        "html": "<ul><li><strong>Standard:</strong> 3-5 business days</li><li><strong>Rush:</strong> 24-48 hours (additional fee)</li><li><strong>Emergency:</strong> Same-day service available (subject to availability)</li></ul>"
+        "title": "Everyday Written Materials",
+        "html": "<p>Letters, forms, notices, flyers, outreach materials, and program documents—translated with both <strong>linguistic accuracy</strong> and <strong>cultural clarity</strong> so your message lands as intended.</p><p>We work closely with <strong>schools, healthcare teams, community organizations, and faith-based groups</strong> to make sure your everyday written communication reaches multilingual audiences with respect and precision.</p>"
       }
     ]
   },
@@ -82,8 +42,30 @@
   "cultural_support": {
     "title": "Cultural & Community Support",
     "intro": "Culturally informed language support helps organizations improve communication with <strong>immigrant, refugee, African diaspora, and multilingual communities</strong>—whether through interpreting, translating written materials, or advising on tone and context for outreach.",
-    "item_title": "Why it matters",
-    "item_body": "Language access is not only word-for-word conversion. We help schools, healthcare teams, community and faith-based groups, social services, and legal partners communicate in ways that build trust, reduce misunderstandings, and respect cultural norms—alongside our core interpretation and translation services."
+    "image": "/assets/img/service-cultural-support.jpg",
+    "image_alt": "A diverse group of women engaged in a respectful, attentive conversation around a shared table",
+    "items": [
+      {
+        "label": "Why it matters",
+        "title": "Language access goes beyond words",
+        "body": "Real language access is not just word-for-word conversion. We help organizations communicate in ways that build trust, reduce misunderstandings, and respect cultural norms across immigrant, refugee, African diaspora, and multilingual communities."
+      },
+      {
+        "label": "Tone & messaging",
+        "title": "Outreach that lands the right way",
+        "body": "Beyond direct translation, we advise on tone, framing, and cultural appropriateness for outreach materials, public-health campaigns, school communications, and community announcements—so your message resonates as intended."
+      },
+      {
+        "label": "Faith & community",
+        "title": "Working alongside trusted institutions",
+        "body": "We partner with churches, Islamic centers, refugee resettlement programs, and community organizations to provide language support that respects religious and cultural practices while keeping families and communities connected."
+      },
+      {
+        "label": "Schools, social services & legal",
+        "title": "Where misunderstandings have real consequences",
+        "body": "Specialized cultural support for school IEP meetings, social-worker visits, legal intakes, and other settings where clarity is critical. Our team helps families and providers communicate with dignity and precision."
+      }
+    ]
   },
   "faq": {
     "title": "Frequently asked questions",
@@ -106,6 +88,14 @@
         "answer": "We translate <strong>official documents</strong> (certified where required) as well as everyday materials—letters, forms, notices, outreach flyers, program handouts, and similar content—with attention to both accuracy and cultural clarity."
       },
       {
+        "question": "What is your translation process and how fast is turnaround?",
+        "answer": "Submit your document via secure upload or in person, and we return a detailed quote within 24 hours. Each translation is completed by a certified linguist, reviewed by a second translator for quality, and certified or notarized if required, then delivered securely by email or mail. <strong>Standard turnaround is 3–5 business days,</strong> with 24–48 hour <strong>rush</strong> options and same-day <strong>emergency</strong> service available subject to availability."
+      },
+      {
+        "question": "Are your interpreters certified for medical, legal, and court settings?",
+        "answer": "Yes. Our medical interpreters are <strong>HIPAA-trained</strong> and our court interpreters are <strong>certified</strong> and able to provide sworn interpretation as required. We also support specialized education settings (IEP meetings, parent–teacher conferences) and conferences with simultaneous or consecutive interpretation, with equipment available on request."
+      },
+      {
         "question": "How quickly will you respond to a quote request?",
         "answer": "We typically reply to email and contact-form messages within <strong>24 hours on business days</strong>. If your request is urgent, call us—especially for live interpreting needs."
       },
@@ -117,7 +107,9 @@
   },
   "hero": {
     "title": "Our Services",
-    "lead": "Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families."
+    "lead": "Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families.",
+    "image": "/assets/img/services-hero-globe.jpg",
+    "image_alt": "Close-up of a globe with country names in multiple languages, evoking world languages and translation"
   },
   "languages": {
     "title": "Languages We Support",

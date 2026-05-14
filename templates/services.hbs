@@ -6,119 +6,128 @@
 <body>
     {{> header}}
 
-    <!-- Page Header -->
-    <section class="hero services-hero">
+    <!-- Page Header (image + headline + integrated CTA bar) -->
+    <section class="hero services-hero{{#if hero.image}} services-hero--has-image{{/if}} services-hero--with-cta">
+        {{#if hero.image}}
+        <img class="services-hero-bg" src="{{hero.image}}" alt="{{hero.image_alt}}">
+        {{/if}}
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>{{hero.title}}</h1>
             <p class="hero-lead">{{hero.lead}}</p>
         </div>
-    </section>
 
-    <section class="services-inline-cta" aria-label="Get a quote or contact us">
-        <div class="container services-inline-cta-inner">
-            <div class="services-inline-cta-text">
-                <strong>{{inline_cta.headline}}</strong>
-                <span>{{inline_cta.subtext}} · <a href="mailto:{{global.email}}" class="services-inline-cta-email">{{global.email}}</a></span>
-            </div>
-            <div class="services-inline-cta-actions">
-                <a href="contact.html?service=quote" class="btn btn-primary">{{inline_cta.quote_label}}</a>
-                <a href="contact.html" class="btn btn-secondary">{{inline_cta.contact_label}}</a>
-                <a href="tel:{{global.phone_link}}" class="services-inline-cta-phone">{{global.phone_display}}</a>
+        <div class="services-inline-cta" aria-label="Get a quote or contact us">
+            <div class="container services-inline-cta-inner">
+                <div class="services-inline-cta-text">
+                    <strong>{{inline_cta.headline}}</strong>
+                    <span>{{inline_cta.subtext}} · <a href="mailto:{{global.email}}" class="services-inline-cta-email">{{global.email}}</a></span>
+                </div>
+                <div class="services-inline-cta-actions">
+                    <a href="contact.html?service=quote" class="btn btn-primary">{{inline_cta.quote_label}}</a>
+                    <a href="contact.html" class="btn btn-secondary">{{inline_cta.contact_label}}</a>
+                    <a href="tel:{{global.phone_link}}" class="services-inline-cta-phone">{{global.phone_display}}</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Document Translation Section -->
-    <section class="section" id="document-translation">
+    <section class="section service-section service-section--tinted" id="document-translation">
         <div class="container">
             <div class="service-category">
-                <div class="section-title">
+                <div class="section-title section-title--editorial">
+                    <span class="section-eyebrow">Written Translation</span>
                     <h2>{{document_translation.title}}</h2>
                     <p>{{document_translation.intro}}</p>
                 </div>
 
+                <div class="service-grid">
                 {{#each document_translation.items}}
-                <div class="service-item">
-                    <div class="service-item-icon">
-                        {{> service_icon}}
+                    <div class="service-item">
+                        <div class="service-item-number" aria-hidden="true">{{numberPrefix @index}}</div>
+                        <h3>{{title}}</h3>
+                        {{{html}}}
                     </div>
-                    <h3>{{title}}</h3>
-                    {{{html}}}
-                </div>
                 {{/each}}
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Cultural and community support -->
-    <section class="section" id="cultural-support" style="background-color: var(--bg-light);">
+    <section class="section cultural-feature" id="cultural-support">
         <div class="container">
-            <div class="service-category">
-                <div class="section-title">
+            <div class="cultural-header{{#unless cultural_support.image}} cultural-header--no-image{{/unless}}">
+                {{#if cultural_support.image}}
+                <div class="cultural-header-photo">
+                    <img src="{{cultural_support.image}}" alt="{{cultural_support.image_alt}}" loading="lazy">
+                </div>
+                {{/if}}
+                <div class="cultural-header-text">
+                    <span class="section-eyebrow">Cultural &amp; Community</span>
                     <h2>{{cultural_support.title}}</h2>
                     <p>{{{cultural_support.intro}}}</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            <path d="M9 12l2 2 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3>{{cultural_support.item_title}}</h3>
-                    <p>{{cultural_support.item_body}}</p>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Interpretation Section -->
-    <section class="section" id="interpretation">
-        <div class="container">
-            <div class="service-category">
-                <div class="section-title">
-                    <h2>{{interpretation.title}}</h2>
-                    <p>{{interpretation.intro}}</p>
-                </div>
-
-                {{#each interpretation.items}}
-                <div class="service-item"{{#if id}} id="{{id}}"{{/if}}>
-                    <div class="service-item-icon">
-                        {{> service_icon}}
-                    </div>
-                    <h3>{{title}}</h3>
-                    {{{html}}}
-                </div>
+            <div class="cultural-grid">
+                {{#each cultural_support.items}}
+                <article class="cultural-tile">
+                    <span class="cultural-tile-label">{{label}}</span>
+                    <h3 class="cultural-tile-title">{{title}}</h3>
+                    <p class="cultural-tile-body">{{body}}</p>
+                </article>
                 {{/each}}
             </div>
         </div>
     </section>
 
-    <!-- Languages supported -->
-    <section class="section" id="languages" style="background-color: var(--bg-light);">
+    <!-- Interpretation Section -->
+    <section class="section service-section service-section--tinted" id="interpretation">
         <div class="container">
             <div class="service-category">
-                <div class="section-title">
-                    <h2>{{languages.title}}</h2>
-                    <p>{{{languages.intro}}}</p>
+                <div class="section-title section-title--editorial">
+                    <span class="section-eyebrow">Spoken Interpretation</span>
+                    <h2>{{interpretation.title}}</h2>
+                    <p>{{interpretation.intro}}</p>
                 </div>
-                <div class="grid grid-2" style="align-items: start;">
-                    <div class="service-item" style="height: 100%;">
-                        <h3>{{languages.african_title}}</h3>
-                        <ul>
-                            {{#each languages.african}}
-                            <li>{{this}}</li>
-                            {{/each}}
-                        </ul>
+
+                <div class="service-grid">
+                {{#each interpretation.items}}
+                    <div class="service-item"{{#if id}} id="{{id}}"{{/if}}>
+                        <div class="service-item-number" aria-hidden="true">{{numberPrefix @index}}</div>
+                        <h3>{{title}}</h3>
+                        {{{html}}}
                     </div>
-                    <div class="service-item" style="height: 100%;">
-                        <h3>{{languages.other_title}}</h3>
-                        <ul>
-                            {{#each languages.other}}
-                            <li>{{this}}</li>
-                            {{/each}}
-                        </ul>
+                {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages supported -->
+    <section class="section languages-feature" id="languages">
+        <div class="container">
+            <div class="section-title section-title--editorial section-title--on-dark">
+                <span class="section-eyebrow">Language Coverage</span>
+                <h2>{{languages.title}}</h2>
+                <p>{{{languages.intro}}}</p>
+            </div>
+            <div class="languages-grid">
+                <div class="language-group">
+                    <h3 class="language-group-title">{{languages.african_title}}</h3>
+                    <div class="language-pills">
+                        {{#each languages.african}}
+                        <span class="language-pill">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="language-group">
+                    <h3 class="language-group-title">{{languages.other_title}}</h3>
+                    <div class="language-pills">
+                        {{#each languages.other}}
+                        <span class="language-pill">{{this}}</span>
+                        {{/each}}
                     </div>
                 </div>
             </div>

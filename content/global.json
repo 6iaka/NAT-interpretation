@@ -8,7 +8,13 @@
   "phone_link": "+12073857813",
   "phone_display": "(207) 385-7813",
   "logo_alt": "NAT Interpretation & Translation Services, LLC — Maine outline filled with world flags",
-  "location": "96 Harlow Street, Bangor, Maine",
+  "site_url": "https://www.nattranslation.com",
+  "location": "96 Harlow Street, 3rd floor, Bangor, Maine 04401",
+  "street_address": "96 Harlow Street, 3rd floor",
+  "address_city": "Bangor",
+  "address_region": "ME",
+  "postal_code": "04401",
+  "address_country": "US",
   "rate_24_7": "Contact For Pricing",
   "footer": {
     "tagline": "Interpretation, document translation, and culturally responsive communication support for multilingual communities. Serving Maine and clients nationwide by phone and video.",
@@ -38,7 +44,7 @@
         "href": "services.html#interpretation"
       },
       {
-        "label": "Cultural & community",
+        "label": "Cultural & Community",
         "href": "services.html#cultural-support"
       },
       {
@@ -46,18 +52,11 @@
         "href": "services.html#languages"
       },
       {
-        "label": "Community & family",
-        "href": "services.html#community"
-      },
-      {
-        "label": "Medical Interpretation",
-        "href": "services.html#medical"
-      },
-      {
-        "label": "Court Interpretation",
-        "href": "services.html#court"
+        "label": "FAQ",
+        "href": "services.html#faq"
       }
     ],
+    "linkedin_url": "https://www.linkedin.com/company/nat-translation-interpretation/",
     "copyright": "&copy; 2026 NAT Interpretation &amp; Translation Services, LLC. All rights reserved."
   },
   "email": "contact@nattranslation.com",

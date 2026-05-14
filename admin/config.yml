@@ -46,9 +46,15 @@ collections:
           - { name: phone_display, label: "Phone (for display)", widget: string, hint: "Formatted, e.g. (207) 385-7813" }
           - { name: phone_link, label: "Phone (for click-to-call)", widget: string, hint: "Digits only with +1, e.g. +12073857813" }
           - { name: email, label: "Email address", widget: string }
-          - { name: location, label: "Location / address", widget: string, hint: "Shown under 'Service Area' on the Contact page. e.g. 96 Harlow Street, Bangor, Maine" }
+          - { name: site_url, label: "Public website URL (canonical base)", widget: string, hint: "No trailing slash, e.g. https://www.nattranslation.com — used for the Contact page canonical link and Google structured data." }
+          - { name: location, label: "Location / address (display line)", widget: string, hint: "One line shown on Contact. e.g. 96 Harlow Street, 3rd floor, Bangor, Maine 04401" }
+          - { name: street_address, label: "Street address (structured, for Google)", widget: string, hint: "e.g. 96 Harlow Street, 3rd floor" }
+          - { name: address_city, label: "City", widget: string }
+          - { name: address_region, label: "State / region code", widget: string, hint: "e.g. ME" }
+          - { name: postal_code, label: "ZIP / postal code", widget: string }
+          - { name: address_country, label: "Country code", widget: string, hint: "ISO code, e.g. US" }
           - { name: logo_alt, label: "Logo alt text", widget: string, hint: "Describes the logo for screen readers and SEO." }
-          - { name: rate_24_7, label: "24/7 interpreting rate", widget: string, hint: "e.g. $1.99 per minute" }
+          - { name: rate_24_7, label: "24/7 interpreting rate", widget: string, hint: "Short rate line if you reference it elsewhere, e.g. 'Contact us for pricing'." }
           - name: nav
             label: "Navigation labels"
             widget: object
@@ -77,6 +83,7 @@ collections:
                 fields:
                   - { name: label, label: "Link text", widget: string }
                   - { name: href, label: "Link URL", widget: string }
+              - { name: linkedin_url, label: "LinkedIn company URL", widget: string, required: false, hint: "Full URL starting with https:// — shows the LinkedIn icon in the footer. Leave blank to hide." }
               - { name: copyright, label: "Copyright line", widget: text, hint: "HTML allowed. Change the year yearly." }
 
   # ================================================================
@@ -110,8 +117,8 @@ collections:
             fields:
               - { name: title, label: "Hero headline", widget: string }
               - { name: lead, label: "Hero subtitle", widget: text }
-              - { name: cta_primary_label, label: "Primary button text", widget: string }
-              - { name: cta_secondary_label, label: "Secondary button text", widget: string }
+              - { name: cta_phone_label, label: "Phone button label", widget: string, hint: "Short eyebrow above the phone number, e.g. 'Call 24/7'. The phone number itself is pulled from Site-wide settings." }
+              - { name: cta_quote_label, label: "Quote button text", widget: string, hint: "e.g. 'Request a Quote'" }
           - name: who_we_serve
             label: "Who We Serve section"
             widget: object
@@ -146,39 +153,24 @@ collections:
                   - { name: number, label: "Step number", widget: string }
                   - { name: title, label: "Step title", widget: string }
                   - { name: description, label: "Step description", widget: text }
-          - name: specialist
-            label: "Featured Specialist section"
+          - name: partners
+            label: "Trusted Partners section"
             widget: object
+            hint: "Logos and links to partner organizations. Add as many as you want; the section is hidden automatically if the list is empty."
             fields:
-              - { name: image_alt, label: "Photo alt text", widget: string }
-              - { name: badge, label: "Badge label (above name)", widget: string }
-              - { name: title, label: "Heading (e.g. Meet Aminata)", widget: string }
-              - { name: role, label: "Role", widget: string }
-              - { name: description, label: "Bio", widget: text }
-              - name: expertise
-                label: "Expertise chips"
-                label_singular: "chip"
+              - { name: title, label: "Section title", widget: string, hint: "e.g. Our Trusted Partners" }
+              - { name: intro, label: "Section intro paragraph", widget: text }
+              - name: items
+                label: "Partners"
+                label_singular: "partner"
                 widget: list
+                summary: "{{fields.name}}"
+                hint: "Click 'Add partner' to add one. Drag to reorder. Click the trash icon to remove."
                 fields:
-                  - { name: title, label: "Title", widget: string }
-                  - { name: certification, label: "Certification", widget: string }
-              - { name: cta_label, label: "Button label", widget: string }
-              - { name: cta_href, label: "Button URL", widget: string }
-          - name: why_choose
-            label: "Why Choose NAT Interpretation"
-            widget: object
-            fields:
-              - { name: title, label: "Section title", widget: string }
-              - { name: intro, label: "Section intro", widget: text }
-              - name: features
-                label: "Feature cards (4)"
-                label_singular: "feature"
-                widget: list
-                min: 4
-                max: 4
-                fields:
-                  - { name: title, label: "Feature title", widget: string }
-                  - { name: description, label: "Feature description", widget: text }
+                  - { name: name, label: "Business name", widget: string }
+                  - { name: logo, label: "Logo (transparent PNG works best)", widget: image, hint: "Upload the partner's logo. PNG with a transparent background looks best on the white card." }
+                  - { name: url, label: "Website URL", widget: string, hint: "Full URL including https:// — clicking the card opens this in a new tab." }
+                  - { name: description, label: "Short description (optional)", widget: text, required: false, hint: "1 short sentence shown under the name. Leave blank to hide." }
           - name: services_preview
             label: "Services Preview cards"
             widget: object
@@ -194,23 +186,10 @@ collections:
                 fields:
                   - { name: title, label: "Card title", widget: string }
                   - { name: description, label: "Card description", widget: text }
+                  - { name: image, label: "Card photo", widget: image, hint: "Landscape photo (16:10 looks best). Minimum 1200px wide for crispness on retina screens." }
+                  - { name: image_alt, label: "Photo alt text", widget: string, hint: "Short description of the photo for screen readers and SEO. e.g. 'Two professionals having a conversation across a table'." }
                   - { name: link_label, label: "Link label (e.g. Learn More)", widget: string }
                   - { name: link_href, label: "Link URL", widget: string }
-          - name: testimonials
-            label: "Testimonials"
-            widget: object
-            fields:
-              - { name: title, label: "Section title", widget: string }
-              - { name: intro, label: "Section intro", widget: text }
-              - name: items
-                label: "Testimonials"
-                label_singular: "testimonial"
-                widget: list
-                fields:
-                  - { name: quote, label: "Quote text", widget: text }
-                  - { name: initials, label: "Initials (for circle)", widget: string }
-                  - { name: name, label: "Name", widget: string }
-                  - { name: role, label: "Role / Organization", widget: string }
           - name: service_areas
             label: "Service Areas section"
             widget: object
@@ -223,19 +202,10 @@ collections:
                 widget: list
                 min: 2
                 max: 2
+                hint: "First card is automatically labelled 'On-site', second card 'Anywhere'."
                 fields:
                   - { name: title, label: "Card title", widget: string }
                   - { name: description, label: "Card description", widget: text }
-          - name: cta
-            label: "Bottom CTA banner"
-            widget: object
-            fields:
-              - { name: title, label: "CTA title", widget: string }
-              - { name: intro, label: "CTA intro", widget: text }
-              - { name: button_label, label: "Primary button label", widget: string }
-              - { name: button_href, label: "Primary button URL", widget: string, hint: "Use tel:+1... for a call button or a page link like contact.html?service=quote" }
-              - { name: button_secondary_label, label: "Secondary button label (optional)", widget: string, required: false }
-              - { name: button_secondary_href, label: "Secondary button URL (optional)", widget: string, required: false }
 
   # ================================================================
   # 3. Services page
@@ -267,6 +237,8 @@ collections:
             fields:
               - { name: title, label: "Hero headline", widget: string }
               - { name: lead, label: "Hero subtitle", widget: text }
+              - { name: image, label: "Hero background photo (optional)", widget: image, required: false, hint: "Wide landscape photo behind the hero. Leave blank for the plain gradient." }
+              - { name: image_alt, label: "Hero photo alt text", widget: string, required: false }
           - name: inline_cta
             label: "Top CTA strip"
             widget: object
@@ -285,11 +257,8 @@ collections:
                 label: "Sub-sections"
                 label_singular: "sub-section"
                 widget: list
+                hint: "Displayed in a 2-column grid and auto-numbered (1, 2, 3...) in the order shown. Drag to reorder."
                 fields:
-                  - name: icon
-                    label: "Icon"
-                    widget: select
-                    options: ["document", "document-lines", "process", "clock"]
                   - { name: title, label: "Sub-section title", widget: string }
                   - { name: html, label: "Sub-section body (HTML)", widget: text, hint: "Use <p>...</p> for paragraphs, <ul><li>...</li></ul> for bullet lists, <strong>bold</strong>." }
           - name: cultural_support
@@ -298,8 +267,19 @@ collections:
             fields:
               - { name: title, label: "Section title", widget: string }
               - { name: intro, label: "Section intro (HTML allowed)", widget: text }
-              - { name: item_title, label: "Sub-section title", widget: string }
-              - { name: item_body, label: "Sub-section body", widget: text }
+              - { name: image, label: "Section photo (optional)", widget: image, required: false, hint: "Photo shown alongside the section title. Leave blank to hide the photo." }
+              - { name: image_alt, label: "Photo alt text", widget: string, required: false, hint: "Short description of the photo for screen readers and SEO." }
+              - name: items
+                label: "Cards (4)"
+                label_singular: "card"
+                widget: list
+                min: 4
+                max: 4
+                hint: "These are displayed as a 2x2 grid below the section intro. Each card gets its own accent color automatically."
+                fields:
+                  - { name: label, label: "Pill label (short uppercase)", widget: string, hint: "e.g. 'Why it matters', 'Tone & messaging'." }
+                  - { name: title, label: "Card title", widget: string }
+                  - { name: body, label: "Card body", widget: text }
           - name: interpretation
             label: "Interpretation Services section"
             widget: object
@@ -310,12 +290,8 @@ collections:
                 label: "Sub-sections"
                 label_singular: "sub-section"
                 widget: list
+                hint: "Displayed in a 2-column grid and auto-numbered (1, 2, 3...) in the order shown. Drag to reorder."
                 fields:
-                  - { name: id, label: "Anchor ID (for #links)", widget: string, required: false }
-                  - name: icon
-                    label: "Icon"
-                    widget: select
-                    options: ["people", "medical", "education", "court", "conference", "modalities"]
                   - { name: title, label: "Sub-section title", widget: string }
                   - { name: html, label: "Sub-section body (HTML)", widget: text }
           - name: languages
@@ -388,6 +364,8 @@ collections:
             fields:
               - { name: title, label: "Hero headline", widget: string }
               - { name: lead, label: "Hero subtitle", widget: text }
+              - { name: image, label: "Hero background photo (optional)", widget: image, required: false, hint: "Wide landscape photo behind the headline, like the Services page hero. Leave blank for a gradient-only banner." }
+              - { name: image_alt, label: "Hero photo alt text", widget: string, required: false }
           - name: info
             label: "Contact information block"
             widget: object
@@ -403,6 +381,17 @@ collections:
               - { name: scheduling_title, label: "Email & scheduling card title", widget: string }
               - { name: scheduling_description, label: "Email & scheduling description", widget: text }
               - { name: scheduling_note, label: "Email & scheduling footnote", widget: text }
+              - name: map
+                label: "Service area map (embed)"
+                widget: object
+                required: false
+                collapsed: true
+                hint: "Optional Google Map under Service Area. Embed URL: Google Maps → Share → Embed a map (copy the iframe src), or keep the default Bangor-style URL in JSON."
+                fields:
+                  - { name: iframe_title, label: "Map iframe description (accessibility)", widget: string }
+                  - { name: embed_url, label: "Map embed URL", widget: string, required: false }
+                  - { name: open_url, label: "Open in Google Maps URL", widget: string, required: false, hint: "Use Share on your Google Business listing: the long /maps/place/... URL opens the named business page; optional short maps.app.goo.gl link also works if it was copied from that listing." }
+                  - { name: open_label, label: "Link label under map", widget: string, required: false, hint: "e.g. Open in Google Maps" }
           - name: form
             label: "Contact form copy"
             widget: object
