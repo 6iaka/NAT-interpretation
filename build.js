@@ -41,7 +41,7 @@ const PARTIALS_DIR = path.join(TEMPLATES_DIR, 'partials');
 const DIST_DIR = path.join(ROOT, 'dist');
 
 // Assets copied verbatim from repo root into dist/. Keep this list small and
-// explicit so stray files don't leak into production.
+// explicit so stray files don't leak into production. Favicons PNGs live at repo root.
 const STATIC_ASSETS = [
   'assets',
   'admin',
@@ -50,7 +50,9 @@ const STATIC_ASSETS = [
   'video home page top.mp4',
   'pexels-7147203-discussion.mp4',
   'robots.txt',
-  'favicon.ico'
+  'favicon.ico',
+  'favicon.png',
+  'apple-touch-icon.png'
 ];
 
 // Pages: template file -> output file. Content key is derived from the output
@@ -84,41 +86,79 @@ function registerHelpers() {
   });
 }
 
-/** JSON-LD for Google / rich results (Contact page only). */
+/**
+ * Homepage + Contact JSON-LD: LocalBusiness (+ ProfessionalService) for entity clarity
+ * and disambiguation from the networking term NAT (Network Address Translation).
+ */
 function buildLocalBusinessSchemaJson(global) {
   const base = (global.site_url || 'https://www.nattranslation.com').replace(/\/$/, '');
+  const homepage = `${base}/`;
+  const altNames = [global.business_short, 'NAT Interpretation & Translation'].filter(Boolean);
+
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': 'LocalBusiness',
+    additionalType: 'https://schema.org/ProfessionalService',
+    '@id': `${base}/#local-business`,
     name: global.business_name,
-    url: base,
+    legalName: global.business_name,
+    alternateName: altNames.length === 1 ? altNames[0] : altNames,
+    url: homepage,
     telephone: global.phone_link,
     email: global.email,
-    image: `${base}/updated%20logo.jpg`,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: global.street_address || global.location,
-      addressLocality: global.address_city,
-      addressRegion: global.address_region,
-      postalCode: global.postal_code,
-      addressCountry: global.address_country || 'US'
-    }
+    image: [`${base}/updated%20logo.jpg`],
+    description:
+      'Professional African and world language interpretation and translation — on-site across Maine with nationwide remote interpreting and translation. Supporting schools, healthcare, legal settings, communities, faith organizations, and families.',
+    disambiguatingDescription:
+      'Human language interpretation and translation company in Bangor, Maine (96 Harlow St). NAT is our registered business shorthand — not computer networking / Network Address Translation.',
+    knowsAbout: [
+      'Interpretation services',
+      'Translation services',
+      'Language services',
+      'African languages',
+      'World languages',
+      'Medical interpretation',
+      'Court interpretation'
+    ],
+    areaServed: [
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Maine'
+      },
+      {
+        '@type': 'Country',
+        name: 'United States'
+      }
+    ]
   };
+
+  const addr = {
+    '@type': 'PostalAddress',
+    streetAddress: global.street_address || global.location,
+    addressLocality: global.address_city,
+    addressRegion: global.address_region,
+    postalCode: global.postal_code,
+    addressCountry: global.address_country || 'US'
+  };
+  ['streetAddress', 'addressLocality', 'addressRegion', 'postalCode', 'addressCountry'].forEach((k) => {
+    if (!addr[k]) delete addr[k];
+  });
+  if (Object.keys(addr).length > 1) {
+    schema.address = addr;
+  }
+
+  const sameAs = [];
   if (global.footer && global.footer.linkedin_url) {
-    schema.sameAs = [global.footer.linkedin_url];
+    sameAs.push(global.footer.linkedin_url);
   }
-  const tag =
-    global.footer && global.footer.tagline
-      ? String(global.footer.tagline).replace(/\s+/g, ' ').trim()
-      : '';
-  if (tag) schema.description = tag;
-  /* Drop empty optional address pieces */
-  if (schema.address) {
-    ['streetAddress', 'addressLocality', 'addressRegion', 'postalCode'].forEach((k) => {
-      if (!schema.address[k]) delete schema.address[k];
-    });
-    if (Object.keys(schema.address).length <= 1) delete schema.address;
+  if (global.maps_place_url) {
+    sameAs.push(global.maps_place_url);
+    schema.hasMap = global.maps_place_url;
   }
+  if (sameAs.length > 0) {
+    schema.sameAs = sameAs;
+  }
+
   return JSON.stringify(schema);
 }
 
@@ -142,7 +182,12 @@ function buildPage(page, global) {
     active: page.content
   };
 
-  if (page.content === 'contact') {
+  const baseSite = global.site_url ? String(global.site_url).replace(/\/$/, '') : '';
+  if (baseSite) {
+    context.canonicalUrl = page.output === 'index.html' ? `${baseSite}/` : `${baseSite}/${page.output}`;
+  }
+
+  if (page.content === 'home' || page.content === 'contact') {
     context.localBusinessSchema = buildLocalBusinessSchemaJson(global);
   }
 

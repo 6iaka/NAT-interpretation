@@ -46,7 +46,8 @@ collections:
           - { name: phone_display, label: "Phone (for display)", widget: string, hint: "Formatted, e.g. (207) 385-7813" }
           - { name: phone_link, label: "Phone (for click-to-call)", widget: string, hint: "Digits only with +1, e.g. +12073857813" }
           - { name: email, label: "Email address", widget: string }
-          - { name: site_url, label: "Public website URL (canonical base)", widget: string, hint: "No trailing slash, e.g. https://www.nattranslation.com — used for the Contact page canonical link and Google structured data." }
+          - { name: site_url, label: "Public website URL (canonical base)", widget: string, hint: "No trailing slash, e.g. https://www.nattranslation.com — canonical links and structured data." }
+          - { name: maps_place_url, label: "Google Maps listing URL (place page)", widget: string, required: false, hint: "Long /maps/place/… link or maps.app.goo.gl Share URL from your verified Google Business Profile — powers JSON-LD hasMap/sameAs." }
           - { name: location, label: "Location / address (display line)", widget: string, hint: "One line shown on Contact. e.g. 96 Harlow Street, 3rd floor, Bangor, Maine 04401" }
           - { name: street_address, label: "Street address (structured, for Google)", widget: string, hint: "e.g. 96 Harlow Street, 3rd floor" }
           - { name: address_city, label: "City", widget: string }

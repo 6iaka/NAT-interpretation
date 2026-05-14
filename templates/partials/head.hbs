@@ -6,6 +6,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{seo.og_title}}">
 <meta property="og:description" content="{{seo.og_description}}">
+{{#if canonicalUrl}}
+<meta property="og:url" content="{{canonicalUrl}}">
+{{/if}}
 
 {{#if seo.twitter_description}}
 <meta property="twitter:card" content="summary_large_image">
@@ -19,4 +22,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/styles.css?v=17">
+<link rel="stylesheet" href="assets/css/styles.css?v=18">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+{{#if canonicalUrl}}
+<link rel="canonical" href="{{canonicalUrl}}">
+{{/if}}
+
+{{#if localBusinessSchema}}
+<script type="application/ld+json">{{{localBusinessSchema}}}</script>
+{{/if}}
