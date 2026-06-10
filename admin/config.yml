@@ -47,6 +47,7 @@ collections:
           - { name: phone_link, label: "Phone (for click-to-call)", widget: string, hint: "Digits only with +1, e.g. +12073857813" }
           - { name: email, label: "Email address", widget: string }
           - { name: site_url, label: "Public website URL (canonical base)", widget: string, hint: "No trailing slash, e.g. https://www.nattranslation.com — canonical links and structured data." }
+          - { name: google_analytics_id, label: "Google Analytics measurement ID", widget: string, required: false, hint: "e.g. G-Q6M7XYG14T — leave blank to disable tracking on all pages." }
           - { name: maps_place_url, label: "Google Maps listing URL (place page)", widget: string, required: false, hint: "Long /maps/place/… link or maps.app.goo.gl Share URL from your verified Google Business Profile — powers JSON-LD hasMap/sameAs." }
           - { name: location, label: "Location / address (display line)", widget: string, hint: "One line shown on Contact. e.g. 96 Harlow Street, 3rd floor, Bangor, Maine 04401" }
           - { name: street_address, label: "Street address (structured, for Google)", widget: string, hint: "e.g. 96 Harlow Street, 3rd floor" }
