@@ -44,6 +44,12 @@
         "logo": "/assets/img/bangor-region-chamber.png",
         "url": "https://www.bangorregion.com/",
         "description": "Connecting and championing businesses across the Bangor region."
+      },
+      {
+        "name": "SK.SERVICES",
+        "logo": "/assets/img/sk-services.png",
+        "url": "https://services-sk.com/",
+        "description": "Agence de placement d'étudiants à l'étranger — orientation et accompagnement scolaire pour étudiants maliens."
       }
     ]
   },
