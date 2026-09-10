@@ -1283,6 +1283,71 @@ nav {
     }
 }
 
+.partner-spotlight {
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.partner-spotlight-head {
+    max-width: 760px;
+    margin: 0 auto 2.25rem;
+    text-align: center;
+}
+
+.partner-spotlight-head h3 {
+    font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+    color: var(--secondary-color);
+    margin-bottom: 0.85rem;
+}
+
+.partner-spotlight-head p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.35rem;
+}
+
+.partner-spotlight-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+}
+
+.partner-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.partner-program-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.35rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.partner-program-card h4 {
+    font-size: 1.05rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.65rem;
+    line-height: 1.35;
+}
+
+.partner-program-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .partner-programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== WHY CHOOSE US (legacy, kept for hidden pages) ===== */
 .why-choose-us {
     background-color: var(--bg-white);

@@ -104,6 +104,29 @@
                 </a>
                 {{/each}}
             </div>
+
+            {{#if partners.spotlight.programs.length}}
+            <div class="partner-spotlight" aria-labelledby="partner-spotlight-heading">
+                <div class="partner-spotlight-head">
+                    <h3 id="partner-spotlight-heading">{{partners.spotlight.title}}</h3>
+                    <p>{{partners.spotlight.intro}}</p>
+                    <div class="partner-spotlight-links">
+                        <a href="{{partners.spotlight.website_url}}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">{{partners.spotlight.website_label}}</a>
+                        {{#if partners.spotlight.facebook_url}}
+                        <a href="{{partners.spotlight.facebook_url}}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">{{partners.spotlight.facebook_label}}</a>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="partner-programs-grid">
+                    {{#each partners.spotlight.programs}}
+                    <article class="partner-program-card">
+                        <h4>{{title}}</h4>
+                        <p>{{description}}</p>
+                    </article>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
         </div>
     </section>
     {{/if}}
