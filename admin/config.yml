@@ -172,27 +172,7 @@ collections:
                   - { name: name, label: "Business name", widget: string }
                   - { name: logo, label: "Logo (transparent PNG works best)", widget: image, hint: "Upload the partner's logo. PNG with a transparent background looks best on the white card." }
                   - { name: url, label: "Website URL", widget: string, hint: "Full URL including https:// — clicking the card opens this in a new tab." }
-                  - { name: description, label: "Short description (optional)", widget: text, required: false, hint: "1 short sentence shown under the name. Leave blank to hide." }
-              - name: spotlight
-                label: "Partner spotlight (programs block below logos)"
-                widget: object
-                required: false
-                collapsed: true
-                hint: "Optional detailed programs section under the partner logos — e.g. Maine MultiCultural Center programs with website and Facebook links."
-                fields:
-                  - { name: title, label: "Spotlight heading", widget: string }
-                  - { name: intro, label: "Intro paragraph", widget: text }
-                  - { name: website_url, label: "Primary website URL", widget: string }
-                  - { name: website_label, label: "Primary button label", widget: string }
-                  - { name: facebook_url, label: "Facebook URL (optional)", widget: string, required: false }
-                  - { name: facebook_label, label: "Facebook button label", widget: string, required: false }
-                  - name: programs
-                    label: "Programs"
-                    label_singular: "program"
-                    widget: list
-                    fields:
-                      - { name: title, label: "Program title", widget: string }
-                      - { name: description, label: "Program description", widget: text }
+                  - { name: description, label: "Short description (optional)", widget: text, required: false, hint: "1–2 sentences on the partner card. Leave blank to hide." }
           - name: services_preview
             label: "Services Preview cards"
             widget: object

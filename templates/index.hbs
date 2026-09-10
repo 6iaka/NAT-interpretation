@@ -86,47 +86,35 @@
                 <h2>{{partners.title}}</h2>
                 <p>{{partners.intro}}</p>
             </div>
-            <div class="partners-grid">
-                {{#each partners.items}}
-                <a class="partner-card" href="{{url}}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{name}} (opens in new tab)">
-                    {{#if logo}}
-                    <div class="partner-logo-wrap">
-                        <img src="{{logo}}" alt="{{name}} logo" class="partner-logo" loading="lazy">
-                    </div>
-                    {{/if}}
-                    <div class="partner-info">
-                        <h3 class="partner-name">{{name}}</h3>
-                        {{#if description}}
-                        <p class="partner-description">{{description}}</p>
-                        {{/if}}
-                        <span class="partner-link" aria-hidden="true">Visit website &rarr;</span>
-                    </div>
-                </a>
-                {{/each}}
-            </div>
-
-            {{#if partners.spotlight.programs.length}}
-            <div class="partner-spotlight" aria-labelledby="partner-spotlight-heading">
-                <div class="partner-spotlight-head">
-                    <h3 id="partner-spotlight-heading">{{partners.spotlight.title}}</h3>
-                    <p>{{partners.spotlight.intro}}</p>
-                    <div class="partner-spotlight-links">
-                        <a href="{{partners.spotlight.website_url}}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">{{partners.spotlight.website_label}}</a>
-                        {{#if partners.spotlight.facebook_url}}
-                        <a href="{{partners.spotlight.facebook_url}}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">{{partners.spotlight.facebook_label}}</a>
-                        {{/if}}
+            <div class="partners-carousel" data-partners-carousel>
+                <button type="button" class="partners-carousel-arrow partners-carousel-arrow--prev" aria-label="Previous partners" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="partners-carousel-viewport" aria-live="polite">
+                    <div class="partners-carousel-track">
+                        {{#each partners.items}}
+                        <a class="partner-card" href="{{url}}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{name}} (opens in new tab)">
+                            {{#if logo}}
+                            <div class="partner-logo-wrap">
+                                <img src="{{logo}}" alt="{{name}} logo" class="partner-logo" loading="lazy">
+                            </div>
+                            {{/if}}
+                            <div class="partner-info">
+                                <h3 class="partner-name">{{name}}</h3>
+                                {{#if description}}
+                                <p class="partner-description">{{description}}</p>
+                                {{/if}}
+                                <span class="partner-link" aria-hidden="true">Visit website &rarr;</span>
+                            </div>
+                        </a>
+                        {{/each}}
                     </div>
                 </div>
-                <div class="partner-programs-grid">
-                    {{#each partners.spotlight.programs}}
-                    <article class="partner-program-card">
-                        <h4>{{title}}</h4>
-                        <p>{{description}}</p>
-                    </article>
-                    {{/each}}
-                </div>
+                <button type="button" class="partners-carousel-arrow partners-carousel-arrow--next" aria-label="Next partners" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+                <div class="partners-carousel-dots" role="tablist" aria-label="Partner carousel"></div>
             </div>
-            {{/if}}
         </div>
     </section>
     {{/if}}

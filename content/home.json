@@ -55,35 +55,9 @@
         "name": "Maine MultiCultural Center",
         "logo": "/assets/img/mmcc-logo.svg",
         "url": "https://mainemulticulturalcenter.org/",
-        "description": "Welcoming and supporting immigrants, refugees, and multilingual families throughout the Greater Bangor area."
+        "description": "Welcoming immigrants and refugee families in Greater Bangor—volunteer support teams, housing (Move-In), business navigation, and community education programs."
       }
-    ],
-    "spotlight": {
-      "title": "Maine MultiCultural Center Programs",
-      "intro": "Our trusted partner MMCC helps New Mainers build successful, connected lives in the Greater Bangor area. Visit their website to learn more, get involved, or reach out directly.",
-      "website_url": "https://mainemulticulturalcenter.org/",
-      "website_label": "Visit mainemulticulturalcenter.org",
-      "facebook_url": "https://www.facebook.com/mainemulticulturalcenter",
-      "facebook_label": "Follow on Facebook",
-      "programs": [
-        {
-          "title": "Volunteer Support Team Program",
-          "description": "Each family MMCC works with is assigned a team of volunteers to help navigate U.S. life and culture—meeting basic needs, accessing essential services, finding social supports, and offering a warm welcome. Volunteers are recruited, vetted, trained, assigned, and supervised by MMCC’s full-time Program Manager."
-        },
-        {
-          "title": "Economic / Business Navigator Program",
-          "description": "MMCC’s Executive Director and Outreach Coordinator assist immigrants with technical matters such as rental applications, work authorization, and applications for assistance. A volunteer employment specialist focuses on job placement, and MMCC connects immigrant entrepreneurs to technical assistance for new business start-ups."
-        },
-        {
-          "title": "Move-In Program",
-          "description": "Helps immigrants locate and settle into safe, affordable, permanent housing. The Executive Director trains Move-In volunteers, manages furniture and housewares donations, purchases items not obtained through donations, runs the warehouse, and advocates with landlords and property managers. MMCC provides rental guarantees for refugees and can often assist asylum seekers with security deposits."
-        },
-        {
-          "title": "Education Program",
-          "description": "MMCC’s Education Committee leads community outreach: workshops for area teachers on supporting foreign-born students and for businesses on creating welcoming workplaces; a monthly virtual public forum on immigration topics; an immigrant handbook in progress; and a workshop for general audiences on who immigrants in our community are, languages and cultures, challenges, long-term resettlement support, and how volunteers can get involved."
-        }
-      ]
-    }
+    ]
   },
   "hero": {
     "title": "Need an Interpreter Fast?",
