@@ -86,12 +86,11 @@
                 <h2>{{partners.title}}</h2>
                 <p>{{partners.intro}}</p>
             </div>
-            <div class="partners-carousel" data-partners-carousel>
-                <button type="button" class="partners-carousel-arrow partners-carousel-arrow--prev" aria-label="Previous partners" hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
-                <div class="partners-carousel-viewport" aria-live="polite">
-                    <div class="partners-carousel-track">
+        </div>
+        <div class="partners-carousel" data-partners-carousel>
+            <div class="partners-carousel-viewport">
+                <div class="partners-carousel-track">
+                    <div class="partners-carousel-group">
                         {{#each partners.items}}
                         <a class="partner-card" href="{{url}}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{name}} (opens in new tab)">
                             {{#if logo}}
@@ -110,10 +109,6 @@
                         {{/each}}
                     </div>
                 </div>
-                <button type="button" class="partners-carousel-arrow partners-carousel-arrow--next" aria-label="Next partners" hidden>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-                <div class="partners-carousel-dots" role="tablist" aria-label="Partner carousel"></div>
             </div>
         </div>
     </section>
