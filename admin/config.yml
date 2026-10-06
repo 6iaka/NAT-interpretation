@@ -63,6 +63,7 @@ collections:
             fields:
               - { name: home, label: "Home link text", widget: string }
               - { name: services, label: "Services link text", widget: string }
+              - { name: languages, label: "Languages link text", widget: string }
               - { name: contact, label: "Contact link text", widget: string }
           - name: footer
             label: "Footer"
@@ -296,24 +297,6 @@ collections:
                 fields:
                   - { name: title, label: "Sub-section title", widget: string }
                   - { name: html, label: "Sub-section body (HTML)", widget: text }
-          - name: languages
-            label: "Languages We Support section"
-            widget: object
-            fields:
-              - { name: title, label: "Section title", widget: string }
-              - { name: intro, label: "Section intro (HTML allowed)", widget: text }
-              - { name: african_title, label: "Left column title", widget: string }
-              - name: african
-                label: "African languages"
-                label_singular: "language"
-                widget: list
-                field: { name: item, label: "Language", widget: string }
-              - { name: other_title, label: "Right column title", widget: string }
-              - name: other
-                label: "Other languages"
-                label_singular: "language"
-                widget: list
-                field: { name: item, label: "Language", widget: string }
           - name: faq
             label: "Frequently Asked Questions"
             widget: object
@@ -337,7 +320,60 @@ collections:
               - { name: button_href, label: "Button URL", widget: string }
 
   # ================================================================
-  # 4. Contact page
+  # 4. Languages page
+  # ================================================================
+  - name: languages_page
+    label: "Languages page"
+    description: "The Languages page linked from the main navigation."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: content/languages.json
+        name: languages
+        label: "Languages page content"
+        fields:
+          - name: seo
+            label: "SEO"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: page_title, label: "Browser tab title", widget: string }
+              - { name: description, label: "Meta description", widget: text }
+              - { name: keywords, label: "Meta keywords", widget: string }
+              - { name: og_title, label: "Open Graph title", widget: string }
+              - { name: og_description, label: "Open Graph description", widget: text }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: title, label: "Hero headline", widget: string }
+              - { name: lead, label: "Hero subtitle (HTML allowed)", widget: text }
+              - { name: image, label: "Hero background photo (optional)", widget: image, required: false, hint: "Wide landscape photo behind the headline. Leave blank for the plain gradient." }
+              - { name: image_alt, label: "Hero photo alt text", widget: string, required: false }
+          - { name: african_title, label: "Left column title", widget: string }
+          - name: african
+            label: "African languages"
+            label_singular: "language"
+            widget: list
+            field: { name: item, label: "Language", widget: string }
+          - { name: other_title, label: "Right column title", widget: string }
+          - name: other
+            label: "Other languages"
+            label_singular: "language"
+            widget: list
+            field: { name: item, label: "Language", widget: string }
+          - name: cta
+            label: "Bottom CTA banner"
+            widget: object
+            fields:
+              - { name: title, label: "CTA title", widget: string }
+              - { name: intro, label: "CTA intro", widget: text }
+              - { name: button_label, label: "Button label", widget: string }
+              - { name: button_href, label: "Button URL", widget: string }
+
+  # ================================================================
+  # 5. Contact page
   # ================================================================
   - name: contact_page
     label: "Contact page"
@@ -449,7 +485,7 @@ collections:
               - { name: free_consultation_description, label: "Free Consultation card body", widget: text }
 
   # ================================================================
-  # 5. Team page (currently unlinked but kept editable)
+  # 6. Team page (currently unlinked but kept editable)
   # ================================================================
   - name: team_page
     label: "Team page (hidden but editable)"

@@ -77,7 +77,7 @@
       },
       {
         "question": "What languages do you support?",
-        "answer": "We support a wide range of <strong>African languages</strong> (including Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and others) and <strong>world languages</strong> such as Arabic, Spanish, Chinese, French, and more. Availability depends on modality and scheduling—see our <a href=\"#languages\">full list</a> and tell us what you need when you reach out."
+        "answer": "We support a wide range of <strong>African languages</strong> (including Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and others) and <strong>world languages</strong> such as Arabic, Spanish, Chinese, French, and more. Availability depends on modality and scheduling—see our <a href=\"languages.html\">full list</a> and tell us what you need when you reach out."
       },
       {
         "question": "How are in-person sessions billed? Is there a travel fee?",
@@ -110,54 +110,6 @@
     "lead": "Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families.",
     "image": "/assets/img/services-hero-globe.jpg",
     "image_alt": "Close-up of a globe with country names in multiple languages, evoking world languages and translation"
-  },
-  "languages": {
-    "title": "Languages We Support",
-    "intro": "Availability varies by language, modality (in-person, phone, or video), and scheduling. Tell us what you need when you <a href=\"contact.html\">contact us</a>—we will confirm the right linguist for your setting.",
-    "african_title": "African languages",
-    "african": [
-      "Bambara",
-      "Mandinka",
-      "Malinké",
-      "Maninka",
-      "Mandingo",
-      "Dyula",
-      "Fula (Pulaar)",
-      "Wolof",
-      "Soninke",
-      "Hausa",
-      "Swahili",
-      "Kinyarwanda",
-      "Amharic",
-      "Oromo",
-      "Twi",
-      "Loma",
-      "Venda",
-      "Tonga",
-      "N’Ko"
-    ],
-    "other_title": "Other languages",
-    "other": [
-      "Chinese",
-      "Arabic",
-      "Russian",
-      "Spanish",
-      "Ukrainian",
-      "French",
-      "Haitian Creole",
-      "Portuguese",
-      "Japanese",
-      "Vietnamese",
-      "Bangla",
-      "Hindi",
-      "German",
-      "Somalian",
-      "Thai",
-      "Bosnian",
-      "Cantonese",
-      "Montenegrin",
-      "Croatian"
-    ]
   },
   "seo": {
     "description": "Interpretation, document translation, and cultural language support for schools, clinics, community orgs, and families. African languages (Bambara, Wolof, Fula, Hausa, Swahili, Amharic, and more) plus Arabic, Spanish, Chinese, and others. Maine and remote.",

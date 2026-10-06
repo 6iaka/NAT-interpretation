@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body>
+    {{> header}}
+
+    <section class="hero services-hero languages-hero{{#if hero.image}} services-hero--has-image{{/if}}">
+        {{#if hero.image}}
+        <img class="services-hero-bg" src="{{hero.image}}" alt="{{hero.image_alt}}">
+        {{/if}}
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{hero.title}}</h1>
+            <p class="hero-lead">{{{hero.lead}}}</p>
+        </div>
+    </section>
+
+    <section class="section languages-feature" id="languages">
+        <div class="container">
+            <div class="languages-grid">
+                <div class="language-group">
+                    <h2 class="language-group-title">{{african_title}}</h2>
+                    <div class="language-pills">
+                        {{#each african}}
+                        <span class="language-pill">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="language-group">
+                    <h2 class="language-group-title">{{other_title}}</h2>
+                    <div class="language-pills">
+                        {{#each other}}
+                        <span class="language-pill">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <h2>{{cta.title}}</h2>
+            <p>{{cta.intro}}</p>
+            <a href="{{cta.button_href}}" class="btn btn-primary btn-large cta-button">{{cta.button_label}}</a>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    {{> scripts}}
+</body>
+</html>

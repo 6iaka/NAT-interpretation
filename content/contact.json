@@ -58,7 +58,7 @@
     ],
     "helper_text": {
       "phone": "Optional - We'll call if we need clarification",
-      "language_pair": "Specify source and target languages (see <a href=\"services.html#languages\">languages we support</a> for examples)",
+      "language_pair": "Specify source and target languages (see <a href=\"languages.html\">languages we support</a> for examples)",
       "preferred_datetime": "Optional - For interpretation services, please specify your preferred date and time"
     },
     "labels": {

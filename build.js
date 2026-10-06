@@ -60,6 +60,7 @@ const STATIC_ASSETS = [
 const PAGES = [
   { template: 'index.hbs', output: 'index.html', content: 'home' },
   { template: 'services.hbs', output: 'services.html', content: 'services' },
+  { template: 'languages.hbs', output: 'languages.html', content: 'languages' },
   { template: 'contact.hbs', output: 'contact.html', content: 'contact' },
   { template: 'team.hbs', output: 'team.html', content: 'team' }
 ];

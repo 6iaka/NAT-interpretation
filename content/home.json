@@ -56,6 +56,12 @@
         "logo": "/assets/img/mmcc-logo.svg",
         "url": "https://mainemulticulturalcenter.org/",
         "description": "Welcoming immigrants and refugee families in Greater Bangor—volunteer support teams, housing (Move-In), business navigation, and community education programs."
+      },
+      {
+        "name": "Penobscot River Educational Service Center",
+        "logo": "/assets/img/presc-logo.svg",
+        "url": "https://sites.google.com/aos47.org/presc/home",
+        "description": "A Maine educational service center of 37 school districts across Hancock, Penobscot, Piscataquis, and Washington counties—professional development, group purchasing, and programs for high-needs students."
       }
     ]
   },
@@ -121,13 +127,13 @@
       "Families and individuals"
     ],
     "audiences_footnote": "On-site and remote sessions for appointments, meetings, intakes, school conferences, community events, and case management.",
-    "cultural_cta_href": "services.html#languages",
+    "cultural_cta_href": "languages.html",
     "title": "Who We Serve",
     "cultural_title": "Cultural clarity, not just words",
     "audiences_intro": "We regularly support:",
     "intro_1": "<strong>NAT Interpretation &amp; Translation Services</strong> centers on interpretation, document translation, and culturally responsive communication for multilingual communities—including immigrant, refugee, African diaspora, and other multilingual populations.",
     "cultural_p1": "Culturally informed language support helps your organization communicate with clarity and respect—whether that is spoken interpretation, written materials, or outreach that lands the right way in the community.",
     "intro_2": "We help schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many others worldwide</strong>.",
-    "cultural_p2": "We work across a wide range of <strong>African languages</strong> and <strong>world languages</strong>. See the full list on our Services page."
+    "cultural_p2": "We work across a wide range of <strong>African languages</strong> and <strong>world languages</strong>. See the full list on our Languages page."
   }
 }

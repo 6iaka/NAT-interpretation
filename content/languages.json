@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Languages We Support",
+    "lead": "Availability varies by language, modality (in-person, phone, or video), and scheduling. Tell us what you need when you <a href=\"contact.html\">contact us</a>—we will confirm the right linguist for your setting.",
+    "image": "/assets/img/services-hero-globe.jpg",
+    "image_alt": "Close-up of a globe with country names in multiple languages, evoking world languages and translation"
+  },
+  "african_title": "African languages",
+  "african": [
+    "Bambara",
+    "Mandinka",
+    "Malinké",
+    "Maninka",
+    "Mandingo",
+    "Dyula",
+    "Fula (Pulaar)",
+    "Wolof",
+    "Soninke",
+    "Hausa",
+    "Swahili",
+    "Kinyarwanda",
+    "Amharic",
+    "Oromo",
+    "Twi",
+    "Loma",
+    "Venda",
+    "Tonga",
+    "N’Ko"
+  ],
+  "other_title": "Other languages",
+  "other": [
+    "Chinese",
+    "Arabic",
+    "Russian",
+    "Spanish",
+    "Ukrainian",
+    "French",
+    "Haitian Creole",
+    "Portuguese",
+    "Japanese",
+    "Vietnamese",
+    "Bangla",
+    "Hindi",
+    "German",
+    "Somalian",
+    "Thai",
+    "Bosnian",
+    "Cantonese",
+    "Montenegrin",
+    "Croatian"
+  ],
+  "cta": {
+    "title": "Need a language that is not listed?",
+    "intro": "Tell us the language pair, the setting, and when you need support. We will confirm availability and follow up with next steps.",
+    "button_label": "Contact us",
+    "button_href": "contact.html"
+  },
+  "seo": {
+    "description": "Languages supported by NAT Interpretation & Translation Services: African languages including Bambara, Wolof, Fula, Hausa, Swahili, and Amharic, plus Arabic, Spanish, Chinese, French, and more. Maine and remote.",
+    "keywords": "Bambara interpreter, Wolof translation, Fula Pulaar, Hausa Swahili, Arabic Spanish Chinese French, Maine interpreter, language list",
+    "og_title": "Languages - NAT Interpretation & Translation Services",
+    "og_description": "African languages and world languages for interpretation and document translation.",
+    "page_title": "Languages - NAT Interpretation & Translation Services, LLC"
+  }
+}

@@ -2317,6 +2317,20 @@ nav {
     margin-bottom: 0;
 }
 
+.services-hero .hero-lead a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.55);
+}
+
+.hero.languages-hero {
+    min-height: 520px;
+    padding: 5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .service-item {
     background: var(--bg-white);
     padding: 2.25rem 2rem 2rem;
