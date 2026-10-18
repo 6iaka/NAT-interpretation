@@ -163,6 +163,27 @@ function buildLocalBusinessSchemaJson(global) {
   return JSON.stringify(schema);
 }
 
+/**
+ * Vercel injects the Web Analytics script path at build time once Analytics
+ * is enabled. The value sometimes has no leading slash, which breaks on
+ * nested pages, so it is normalized. Local builds fall back to the classic route.
+ */
+function vercelAnalyticsScriptSrc() {
+  const fallback = '/_vercel/insights/script.js';
+  const rawEnv = process.env.VERCEL_OBSERVABILITY_CLIENT_CONFIG;
+  if (!rawEnv) return fallback;
+  try {
+    const config = JSON.parse(rawEnv);
+    const src = config && config.analytics && config.analytics.scriptSrc;
+    if (!src || typeof src !== 'string') return fallback;
+    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('/')) return src;
+    return `/${src}`;
+  } catch (err) {
+    console.warn('Ignoring invalid VERCEL_OBSERVABILITY_CLIENT_CONFIG');
+    return fallback;
+  }
+}
+
 function loadJson(file) {
   const full = path.join(CONTENT_DIR, file);
   if (!fs.existsSync(full)) {
@@ -180,7 +201,8 @@ function buildPage(page, global) {
   const context = {
     ...pageContent,
     global,
-    active: page.content
+    active: page.content,
+    vercelAnalyticsScriptSrc: vercelAnalyticsScriptSrc()
   };
 
   const baseSite = global.site_url ? String(global.site_url).replace(/\/$/, '') : '';
