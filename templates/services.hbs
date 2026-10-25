@@ -5,30 +5,12 @@
 </head>
 <body>
     {{> header}}
+    <main id="main-content">
 
-    <!-- Page Header (image + headline + integrated CTA bar) -->
-    <section class="hero services-hero{{#if hero.image}} services-hero--has-image{{/if}} services-hero--with-cta">
-        {{#if hero.image}}
-        <img class="services-hero-bg" src="{{hero.image}}" alt="{{hero.image_alt}}">
-        {{/if}}
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>{{hero.title}}</h1>
-            <p class="hero-lead">{{hero.lead}}</p>
-        </div>
-
-        <div class="services-inline-cta" aria-label="Get a quote or contact us">
-            <div class="container services-inline-cta-inner">
-                <div class="services-inline-cta-text">
-                    <strong>{{inline_cta.headline}}</strong>
-                    <span>{{inline_cta.subtext}} · <a href="mailto:{{global.email}}" class="services-inline-cta-email">{{global.email}}</a></span>
-                </div>
-                <div class="services-inline-cta-actions">
-                    <a href="contact.html?service=quote" class="btn btn-primary">{{inline_cta.quote_label}}</a>
-                    <a href="contact.html" class="btn btn-secondary">{{inline_cta.contact_label}}</a>
-                    <a href="tel:{{global.phone_link}}" class="services-inline-cta-phone">{{global.phone_display}}</a>
-                </div>
-            </div>
+    <section class="page-header services-page-header">
+        <div class="container page-header-layout">
+            <div><span class="eyebrow">Our services</span><h1>{{hero.title}}</h1><p>{{hero.lead}}</p><a href="contact.html?service=quote" class="text-link">{{inline_cta.quote_label}} <span aria-hidden="true">↗</span></a></div>
+            {{#if hero.image}}<img src="{{hero.image}}" alt="{{hero.image_alt}}" class="page-header-photo">{{/if}}
         </div>
     </section>
 
@@ -134,6 +116,7 @@
         </div>
     </section>
 
+    </main>
     {{> footer}}
 
     {{> scripts}}

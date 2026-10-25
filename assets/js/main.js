@@ -4,17 +4,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenuToggle && navLinks) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+        const setMenu = (open) => {
+            navLinks.classList.toggle('active', open);
+            mobileMenuToggle.setAttribute('aria-expanded', String(open));
+            mobileMenuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        mobileMenuToggle.addEventListener('click', () => {
+            setMenu(mobileMenuToggle.getAttribute('aria-expanded') !== 'true');
         });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+                setMenu(false);
+                mobileMenuToggle.focus();
+            }
+        });
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.site-header')) setMenu(false);
+        });
+    }
 
-        // Close menu when clicking on a link
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
+    // Keep the owner's opening film, with a visible playback control.
+    const heroVideo = document.querySelector('.hero-video');
+    const videoToggle = document.querySelector('.video-toggle');
+    if (heroVideo && videoToggle) {
+        const syncPlaybackLabel = () => {
+            const paused = heroVideo.paused;
+            videoToggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+            videoToggle.innerHTML = paused ? 'Play video <span aria-hidden="true">▷</span>' : 'Pause video <span aria-hidden="true">Ⅱ</span>';
+        };
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (motionPreference.matches) heroVideo.pause();
+        motionPreference.addEventListener('change', (event) => {
+            if (event.matches) heroVideo.pause();
         });
+        heroVideo.addEventListener('play', syncPlaybackLabel);
+        heroVideo.addEventListener('pause', syncPlaybackLabel);
+        videoToggle.addEventListener('click', () => {
+            if (heroVideo.paused) heroVideo.play().catch(syncPlaybackLabel);
+            else heroVideo.pause();
+        });
+        syncPlaybackLabel();
     }
 
     // Set active nav link based on current page
@@ -98,30 +130,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Trusted partners: continuous infinite scroll
-    const partnersCarousel = document.querySelector('[data-partners-carousel]');
-    if (partnersCarousel) {
-        const track = partnersCarousel.querySelector('.partners-carousel-track');
-        const group = track ? track.querySelector('.partners-carousel-group') : null;
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (group && !reduceMotion && group.children.length > 0) {
-            const clone = group.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            clone.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
-            track.appendChild(clone);
-
-            const setDuration = () => {
-                const distance = group.getBoundingClientRect().width;
-                if (!distance) return;
-                const seconds = Math.max(16, distance / 55);
-                track.style.animationDuration = seconds + 's';
-            };
-
-            setDuration();
-            window.addEventListener('resize', setDuration);
-        } else {
-            partnersCarousel.classList.add('is-static');
-        }
-    }
 });

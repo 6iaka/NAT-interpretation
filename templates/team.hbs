@@ -5,14 +5,11 @@
 </head>
 <body>
     {{> header}}
+    <main id="main-content">
 
     <!-- Page Header -->
-    <section class="hero team-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>{{hero.title}}</h1>
-            <p>{{hero.lead}}</p>
-        </div>
+    <section class="page-header">
+        <div class="container"><span class="eyebrow">The people behind NAT</span><h1>{{hero.title}}</h1><p>{{{hero.lead}}}</p></div>
     </section>
 
     <!-- Team Section -->
@@ -117,6 +114,7 @@
         </div>
     </section>
 
+    </main>
     {{> footer}}
 
     {{> scripts}}

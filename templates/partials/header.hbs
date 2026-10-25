@@ -1,14 +1,17 @@
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="updated%20logo.jpg" alt="{{global.logo_alt}}">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+    <nav class="container" aria-label="Main navigation">
+        <a href="index.html" class="logo" aria-label="NAT Interpretation and Translation — Home">
+            <img src="updated%20logo.jpg" alt="" width="54" height="54">
+            <span class="wordmark"><strong>NAT</strong><span>Interpretation &amp;<br>Translation Services</span></span>
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html"{{#if (eq active 'home')}} class="active"{{/if}}>{{global.nav.home}}</a></li>
-            <li><a href="services.html"{{#if (eq active 'services')}} class="active"{{/if}}>{{global.nav.services}}</a></li>
-            <li><a href="languages.html"{{#if (eq active 'languages')}} class="active"{{/if}}>{{global.nav.languages}}</a></li>
-            <li><a href="contact.html"{{#if (eq active 'contact')}} class="active"{{/if}}>{{global.nav.contact}}</a></li>
+        <ul class="nav-links" id="main-navigation">
+            <li><a href="index.html"{{#if (eq active 'home')}} class="active" aria-current="page"{{/if}}>{{global.nav.home}}</a></li>
+            <li><a href="services.html"{{#if (eq active 'services')}} class="active" aria-current="page"{{/if}}>{{global.nav.services}}</a></li>
+            <li><a href="languages.html"{{#if (eq active 'languages')}} class="active" aria-current="page"{{/if}}>{{global.nav.languages}}</a></li>
+            <li><a href="contact.html"{{#if (eq active 'contact')}} class="active" aria-current="page"{{/if}}>{{global.nav.contact}}</a></li>
         </ul>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        <a class="nav-phone" href="tel:{{global.phone_link}}">{{global.phone_display}} <span aria-hidden="true">↗</span></a>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-navigation">Menu <span aria-hidden="true">☰</span></button>
     </nav>
 </header>

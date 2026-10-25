@@ -5,18 +5,10 @@
 </head>
 <body>
     {{> header}}
+    <main id="main-content">
 
-    <section class="hero contact-hero{{#if hero.image}} contact-hero--has-image{{/if}}">
-        {{#if hero.image}}
-        <img class="contact-hero-bg" src="{{hero.image}}" alt="{{hero.image_alt}}">
-        {{/if}}
-        <div class="contact-hero-glow" aria-hidden="true"></div>
-        <div class="hero-overlay contact-hero-overlay"></div>
-        <div class="hero-content contact-hero-inner">
-            <span class="contact-hero-eyebrow">Reach out</span>
-            <h1>{{hero.title}}</h1>
-            <p class="contact-hero-lead">{{hero.lead}}</p>
-        </div>
+    <section class="page-header">
+        <div class="container"><span class="eyebrow">Let’s talk</span><h1>{{hero.title}}</h1><p>{{{hero.lead}}}</p></div>
     </section>
 
     <section class="section contact-band">
@@ -108,17 +100,17 @@
 
                         <div class="form-group">
                             <label for="name">{{form.labels.name}} <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="{{form.placeholders.name}}">
+                            <input type="text" id="name" name="name" autocomplete="name" required placeholder="{{form.placeholders.name}}">
                         </div>
 
                         <div class="form-group">
                             <label for="email">{{form.labels.email}} <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="{{form.placeholders.email}}">
+                            <input type="email" id="email" name="email" autocomplete="email" required placeholder="{{form.placeholders.email}}">
                         </div>
 
                         <div class="form-group">
                             <label for="phone">{{form.labels.phone}}</label>
-                            <input type="tel" id="phone" name="phone" placeholder="{{form.placeholders.phone}}">
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="{{form.placeholders.phone}}">
                             <small>{{form.helper_text.phone}}</small>
                         </div>
 
@@ -177,6 +169,7 @@
         </div>
     </section>
 
+    </main>
     {{> footer}}
 
     {{> scripts}}

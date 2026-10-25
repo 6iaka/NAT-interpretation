@@ -1,37 +1,37 @@
 {
   "services_preview": {
-    "title": "Our Services",
-    "intro": "Our business model is centered on interpretation, document translation, and culturally responsive communication support—so multilingual communities get accurate, respectful language access.",
+    "title": "The right words.\nThe right support.",
+    "intro": "From a medical appointment to an important document, we help people understand one another with accuracy, care, and cultural awareness.",
     "items": [
       {
         "title": "Document Translation",
-        "description": "From certified official documents to everyday written communication: letters, forms, notices, outreach materials, flyers, and program documents—translated with linguistic and cultural clarity.",
+        "description": "Clear, accurate translations of official documents, letters, forms, and outreach materials. Careful attention to both language and context.",
         "image": "/assets/img/service-document-translation.jpg",
         "image_alt": "Open multilingual dictionary alongside a map, illustrating cross-language document translation",
-        "link_label": "Learn More",
+        "link_label": "Explore translation",
         "link_href": "services.html#document-translation"
       },
       {
         "title": "Interpretation",
-        "description": "On-site and remote interpreting for appointments, meetings, intakes, school conferences, community events, and case management. Phone and video interpreting is available 24/7; mileage may apply for in-person visits.",
+        "description": "An interpreter for the conversations that matter: appointments, school conferences, legal meetings, and community events. On-site, by phone, or by video.",
         "image": "/assets/img/service-interpretation.jpg",
         "image_alt": "Two professionals from different backgrounds in a focused conversation, representing live interpretation",
-        "link_label": "Learn More",
+        "link_label": "Explore interpretation",
         "link_href": "services.html#interpretation"
       },
       {
         "title": "Cultural & community support",
-        "description": "Culturally informed language support so schools, nonprofits, faith communities, and service providers can reach immigrant, refugee, African, and multilingual audiences with confidence.",
+        "description": "Language support grounded in cultural understanding, helping organizations reach immigrant, refugee, and multilingual communities.",
         "image": "/assets/img/service-cultural-support.jpg",
         "image_alt": "A diverse group of women engaged in a respectful, attentive conversation around a shared table",
-        "link_label": "Learn More",
+        "link_label": "Explore cultural support",
         "link_href": "services.html#cultural-support"
       }
     ]
   },
   "partners": {
-    "title": "Our Trusted Partners",
-    "intro": "We're proud to work alongside organizations across the Bangor region and beyond who share our commitment to clear, respectful communication for every community.",
+    "title": "Part of our community.",
+    "intro": "Working alongside organizations in the Bangor region and beyond.",
     "items": [
       {
         "name": "Katahdin Pediatric Dentistry",
@@ -67,13 +67,13 @@
   },
   "hero": {
     "title": "Need an Interpreter Fast?",
-    "lead": "Professional interpretation and translation in World languages for schools, healthcare, courts, and communities across Maine and remotely. Phone and video available 24/7.",
-    "cta_phone_label": "Call 24/7",
-    "cta_quote_label": "Request a Quote"
+    "lead": "Interpretation, document translation, and cultural support. In person across Maine, and by phone or video wherever you are.",
+    "cta_phone_label": "Phone & video available 24/7",
+    "cta_quote_label": "Contact us"
   },
   "service_areas": {
-    "title": "Service Areas",
-    "intro": "Whether you're in Bangor or across the country, we're here to help. We serve clients both locally and remotely.",
+    "title": "Local roots.\nA wider reach.",
+    "intro": "Visit us in Bangor or work with us remotely. We’ll help you find the right format for your needs.",
     "items": [
       {
         "title": "Bangor, Maine & nearby",
@@ -94,29 +94,29 @@
     "page_title": "Interpretation & Translation | NAT Language Services — Maine & Nationwide"
   },
   "how_it_works": {
-    "title": "How It Works",
-    "intro": "Getting professional language services is simple and straightforward. We've streamlined our process to make it easy for you.",
+    "title": "Tell us what you need.\nWe’ll take it from there.",
+    "intro": "A straightforward process, with a person to help you at each step.",
     "steps": [
       {
         "number": "1",
-        "title": "Request a Quote",
-        "description": "Contact us with your service needs, language pair, and preferred date. We'll respond within 24 hours with a detailed quote."
+        "title": "Start a conversation",
+        "description": "Share your language pair, the setting, and when you need support. We’ll follow up with a quote and next steps."
       },
       {
         "number": "2",
-        "title": "We Match You",
-        "description": "Our team matches you with a certified interpreter or translator who specializes in your field and language pair."
+        "title": "Find the right match",
+        "description": "We match your request with an interpreter or translator who understands your language pair and the setting."
       },
       {
         "number": "3",
-        "title": "Receive Service",
-        "description": "Get accurate, professional interpretation or translation services delivered on time, every time."
+        "title": "Connect with confidence",
+        "description": "Meet in person, connect by phone or video, or receive your translated documents. Our team helps coordinate the details."
       }
     ]
   },
   "who_we_serve": {
     "cultural_cta_label": "Languages we support",
-    "audiences_title": "Primary audiences",
+    "audiences_title": "Supporting everyday connections",
     "audiences_list": [
       "Schools and youth programs",
       "Healthcare providers and clinics",
@@ -128,12 +128,12 @@
     ],
     "audiences_footnote": "On-site and remote sessions for appointments, meetings, intakes, school conferences, community events, and case management.",
     "cultural_cta_href": "languages.html",
-    "title": "Who We Serve",
-    "cultural_title": "Cultural clarity, not just words",
+    "title": "For the people\nin your community.",
+    "cultural_title": "Understanding goes beyond words.",
     "audiences_intro": "We regularly support:",
-    "intro_1": "<strong>NAT Interpretation &amp; Translation Services</strong> centers on interpretation, document translation, and culturally responsive communication for multilingual communities—including immigrant, refugee, African diaspora, and other multilingual populations.",
-    "cultural_p1": "Culturally informed language support helps your organization communicate with clarity and respect—whether that is spoken interpretation, written materials, or outreach that lands the right way in the community.",
-    "intro_2": "We help schools, healthcare providers, community organizations, churches, Islamic centers, social workers, legal offices, and families communicate clearly across <strong>African languages and many others worldwide</strong>.",
+    "intro_1": "We work with the organizations and individuals who make everyday life possible—from local schools and clinics to families navigating a new language.",
+    "cultural_p1": "Language carries context, culture, and lived experience. We bring that understanding to every conversation and every page.",
+    "intro_2": "Our work is rooted in Maine’s multilingual communities, with experience across African languages and languages spoken around the world.",
     "cultural_p2": "We work across a wide range of <strong>African languages</strong> and <strong>world languages</strong>. See the full list on our Languages page."
   }
 }

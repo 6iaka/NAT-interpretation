@@ -5,16 +5,10 @@
 </head>
 <body>
     {{> header}}
+    <main id="main-content">
 
-    <section class="hero services-hero languages-hero{{#if hero.image}} services-hero--has-image{{/if}}">
-        {{#if hero.image}}
-        <img class="services-hero-bg" src="{{hero.image}}" alt="{{hero.image_alt}}">
-        {{/if}}
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>{{hero.title}}</h1>
-            <p class="hero-lead">{{{hero.lead}}}</p>
-        </div>
+    <section class="page-header">
+        <div class="container"><span class="eyebrow">African & world languages</span><h1>{{hero.title}}</h1><p>{{{hero.lead}}}</p></div>
     </section>
 
     <section class="section languages-feature" id="languages">
@@ -48,6 +42,7 @@
         </div>
     </section>
 
+    </main>
     {{> footer}}
 
     {{> scripts}}
