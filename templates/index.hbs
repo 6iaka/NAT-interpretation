@@ -7,8 +7,8 @@
     {{> header}}
     <main id="main-content">
         <section class="hero home-hero" aria-labelledby="home-heading">
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-                <source src="pexels-7147203-discussion.mp4?v=5" type="video/mp4">
+            <video class="hero-video" autoplay muted loop playsinline preload="none" poster="assets/img/home-hero-poster.webp" aria-hidden="true">
+                <source data-src="assets/video/home-hero.mp4?v=1" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
@@ -20,7 +20,6 @@
                     <a href="tel:{{global.phone_link}}" class="hero-phone">{{global.phone_display}}<small>{{hero.cta_phone_label}}</small></a>
                 </div>
             </div>
-            <button class="video-toggle" type="button" aria-label="Pause background video">Pause video <span aria-hidden="true">Ⅱ</span></button>
         </section>
 
         <section class="section home-services" aria-labelledby="services-heading">

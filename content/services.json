@@ -42,7 +42,7 @@
   "cultural_support": {
     "title": "Cultural & Community Support",
     "intro": "Culturally informed language support helps organizations improve communication with <strong>immigrant, refugee, African diaspora, and multilingual communities</strong>—whether through interpreting, translating written materials, or advising on tone and context for outreach.",
-    "image": "/assets/img/service-cultural-support.jpg",
+    "image": "/assets/img/service-cultural-support.webp",
     "image_alt": "A diverse group of women engaged in a respectful, attentive conversation around a shared table",
     "items": [
       {
@@ -108,7 +108,7 @@
   "hero": {
     "title": "Our Services",
     "lead": "Interpretation, document translation, and culturally informed language support—for schools, healthcare, community and faith organizations, social services, legal settings, and families.",
-    "image": "/assets/img/services-hero-globe.jpg",
+    "image": "/assets/img/services-hero-globe.webp",
     "image_alt": "Close-up of a globe with country names in multiple languages, evoking world languages and translation"
   },
   "seo": {

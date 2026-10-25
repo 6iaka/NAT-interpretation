@@ -26,27 +26,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Keep the owner's opening film, with a visible playback control.
+    // Paint the lightweight poster first; only load and play the film when visible.
     const heroVideo = document.querySelector('.hero-video');
-    const videoToggle = document.querySelector('.video-toggle');
-    if (heroVideo && videoToggle) {
-        const syncPlaybackLabel = () => {
-            const paused = heroVideo.paused;
-            videoToggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
-            videoToggle.innerHTML = paused ? 'Play video <span aria-hidden="true">▷</span>' : 'Pause video <span aria-hidden="true">Ⅱ</span>';
-        };
+    if (heroVideo) {
         const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (motionPreference.matches) heroVideo.pause();
-        motionPreference.addEventListener('change', (event) => {
-            if (event.matches) heroVideo.pause();
-        });
-        heroVideo.addEventListener('play', syncPlaybackLabel);
-        heroVideo.addEventListener('pause', syncPlaybackLabel);
-        videoToggle.addEventListener('click', () => {
-            if (heroVideo.paused) heroVideo.play().catch(syncPlaybackLabel);
-            else heroVideo.pause();
-        });
-        syncPlaybackLabel();
+        const source = heroVideo.querySelector('source[data-src]');
+        const connection = navigator.connection;
+        let visible = false;
+        let scheduled = false;
+        const syncVideo = () => {
+            if (!visible || document.hidden || motionPreference.matches || (connection && connection.saveData)) {
+                heroVideo.pause();
+                return;
+            }
+            if (!source.getAttribute('src')) {
+                if (scheduled) return;
+                scheduled = true;
+                const loadVideo = () => {
+                    scheduled = false;
+                    if (!visible || document.hidden || motionPreference.matches || (connection && connection.saveData)) return;
+                    source.src = source.dataset.src;
+                    heroVideo.load();
+                    heroVideo.play().catch(() => {});
+                };
+                if ('requestIdleCallback' in window) window.requestIdleCallback(loadVideo, { timeout: 1500 });
+                else requestAnimationFrame(() => requestAnimationFrame(loadVideo));
+            } else {
+                heroVideo.play().catch(() => {});
+            }
+        };
+        new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            syncVideo();
+        }).observe(heroVideo);
+        motionPreference.addEventListener('change', syncVideo);
+        document.addEventListener('visibilitychange', syncVideo);
+        if (connection) connection.addEventListener('change', syncVideo);
     }
 
     // Set active nav link based on current page
@@ -148,13 +163,19 @@ document.addEventListener('DOMContentLoaded', function() {
             let touching = false;
             let previousTime = null;
             let frame = null;
-            const canAnimate = () => playing && !hovered && !focused && !touching && !document.hidden;
+            let inView = false;
+            let distance = group.getBoundingClientRect().width;
+            let fractionalPixels = 0;
+            new ResizeObserver(() => { distance = group.getBoundingClientRect().width; }).observe(group);
+            const canAnimate = () => playing && inView && !hovered && !focused && !touching && !document.hidden;
             const tick = (time) => {
                 if (!canAnimate()) { frame = null; previousTime = null; return; }
                 if (previousTime !== null) {
-                    const distance = group.getBoundingClientRect().width;
                     if (distance > 0) {
-                        partnersViewport.scrollLeft = (partnersViewport.scrollLeft + Math.min(time - previousTime, 64) * 0.035) % distance;
+                        fractionalPixels += Math.min(time - previousTime, 64) * 0.035;
+                        const pixels = Math.floor(fractionalPixels);
+                        fractionalPixels -= pixels;
+                        partnersViewport.scrollLeft = (partnersViewport.scrollLeft + pixels) % distance;
                     }
                 }
                 previousTime = time;
@@ -168,6 +189,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     cancelAnimationFrame(frame); frame = null; previousTime = null;
                 }
             };
+            new IntersectionObserver(([entry]) => {
+                inView = entry.isIntersecting;
+                updatePlayback();
+            }, { rootMargin: '100px' }).observe(partnersViewport);
             partnersToggle.hidden = false;
             partnersToggle.addEventListener('click', () => { playing = !playing; updatePlayback(); });
             partnersViewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; updatePlayback(); });

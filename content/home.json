@@ -6,7 +6,7 @@
       {
         "title": "Document Translation",
         "description": "Clear, accurate translations of official documents, letters, forms, and outreach materials. Careful attention to both language and context.",
-        "image": "/assets/img/service-document-translation.jpg",
+        "image": "/assets/img/service-document-translation.webp",
         "image_alt": "Open multilingual dictionary alongside a map, illustrating cross-language document translation",
         "link_label": "Explore translation",
         "link_href": "services.html#document-translation"
@@ -14,7 +14,7 @@
       {
         "title": "Interpretation",
         "description": "An interpreter for the conversations that matter: appointments, school conferences, legal meetings, and community events. On-site, by phone, or by video.",
-        "image": "/assets/img/service-interpretation.jpg",
+        "image": "/assets/img/service-interpretation.webp",
         "image_alt": "Two professionals from different backgrounds in a focused conversation, representing live interpretation",
         "link_label": "Explore interpretation",
         "link_href": "services.html#interpretation"
@@ -22,7 +22,7 @@
       {
         "title": "Cultural & community support",
         "description": "Language support grounded in cultural understanding, helping organizations reach immigrant, refugee, and multilingual communities.",
-        "image": "/assets/img/service-cultural-support.jpg",
+        "image": "/assets/img/service-cultural-support.webp",
         "image_alt": "A diverse group of women engaged in a respectful, attentive conversation around a shared table",
         "link_label": "Explore cultural support",
         "link_href": "services.html#cultural-support"
@@ -35,19 +35,19 @@
     "items": [
       {
         "name": "Katahdin Pediatric Dentistry",
-        "logo": "/assets/img/katahdin-pediatric-dentistry.png",
+        "logo": "/assets/img/katahdin-pediatric-dentistry.webp",
         "url": "https://katahdinpediatricdentistry.com/",
         "description": "Pediatric dental care in Bangor, Maine."
       },
       {
         "name": "Bangor Region Chamber of Commerce",
-        "logo": "/assets/img/bangor-region-chamber.png",
+        "logo": "/assets/img/bangor-region-chamber.webp",
         "url": "https://www.bangorregion.com/",
         "description": "Connecting and championing businesses across the Bangor region."
       },
       {
         "name": "SK.SERVICES",
-        "logo": "/assets/img/sk-services.png",
+        "logo": "/assets/img/sk-services.webp",
         "url": "https://services-sk.com/",
         "description": "Agence de placement d'étudiants à l'étranger — orientation et accompagnement scolaire pour étudiants maliens."
       },
