@@ -116,7 +116,12 @@ strong { font-weight: 600; }
 .trusted-partners h2 { font-size: 2.8rem; }
 .trusted-partners .section-heading { margin-bottom: 36px; }
 .trusted-partners .section-heading p { font-size: .9rem; }
-.partner-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; }
+.partners-controls { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 20px; color: var(--text-light); font-size: .75rem; }
+.partners-toggle { padding: 6px 0; color: var(--primary-color); border: 0; border-bottom: 1px solid currentColor; background: none; cursor: pointer; font-size: .75rem; }
+.partners-viewport { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #b5c0c3 transparent; padding: 8px 0 20px; }
+.partners-track { display: flex; width: max-content; }
+.partner-list { display: flex; flex-shrink: 0; gap: 32px; padding-right: 32px; }
+.partner-list .partner { flex: 0 0 208px; width: 208px; }
 .partner { color: var(--text-light); text-align: center; text-decoration: none; font-size: .65rem; line-height: 1.5; }
 .partner:hover { text-decoration: underline; }
 .partner-logo-wrap { height: 95px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
@@ -312,7 +317,7 @@ footer { background: var(--bg-light); padding-block: 65px 25px; }
     .step-number { margin-bottom: 22px; }
     .step h3 { font-size: 1rem; }
     .step p { font-size: .82rem; }
-    .partner-list { grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+    .partner-list .partner { flex-basis: 180px; width: 180px; }
     .partner img { max-width: 140px; }
     .areas-grid { gap: 35px; }
     .area h3 { font-size: 1.8rem; }
@@ -356,7 +361,7 @@ footer { background: var(--bg-light); padding-block: 65px 25px; }
     .step-number { grid-row: span 2; font-size: 2.1rem; margin: 0; }
     .step h3 { margin: 0 0 10px; font-size: 1.1rem; }
     .step p { grid-column: 2; font-size: .9rem; }
-    .partner-list { grid-template-columns: 1fr 1fr; gap: 30px 24px; }
+
     .partner-logo-wrap { height: 80px; margin-bottom: 10px; }
     .partner img { max-height: 65px; }
     .areas-grid { gap: 35px; }

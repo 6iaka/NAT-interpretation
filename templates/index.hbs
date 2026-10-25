@@ -67,10 +67,15 @@
         <section class="section trusted-partners" aria-labelledby="partners-heading">
             <div class="container">
                 <div class="section-heading"><span class="eyebrow">Working together</span><h2 id="partners-heading">{{partners.title}}</h2><p>{{partners.intro}}</p></div>
+                <div class="partners-controls"><span id="partners-hint">Scroll to explore our partners</span><button type="button" class="partners-toggle" aria-controls="partners-viewport" hidden>Pause slideshow</button></div>
+                <div class="partners-viewport" id="partners-viewport" tabindex="0" role="region" aria-label="Trusted partner logos" aria-describedby="partners-hint">
+                <div class="partners-track">
                 <div class="partner-list">
                     {{#each partners.items}}
                     <a class="partner" href="{{url}}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{name}} (opens in new tab)"><div class="partner-logo-wrap"><img src="{{logo}}" alt="" loading="lazy"></div><span>{{name}}</span></a>
                     {{/each}}
+                </div>
+                </div>
                 </div>
             </div>
         </section>

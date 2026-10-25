@@ -130,4 +130,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Native horizontal scrolling, enhanced with a seamless continuous loop.
+    const partnersViewport = document.querySelector('.partners-viewport');
+    const partnersToggle = document.querySelector('.partners-toggle');
+    if (partnersViewport && partnersToggle) {
+        const track = partnersViewport.querySelector('.partners-track');
+        const group = track.querySelector('.partner-list');
+        if (group && group.children.length > 1) {
+            const copy = group.cloneNode(true);
+            copy.setAttribute('aria-hidden', 'true');
+            copy.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+            track.appendChild(copy);
+            const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let playing = !motionPreference.matches;
+            let hovered = false;
+            let focused = false;
+            let touching = false;
+            let previousTime = null;
+            let frame = null;
+            const canAnimate = () => playing && !hovered && !focused && !touching && !document.hidden;
+            const tick = (time) => {
+                if (!canAnimate()) { frame = null; previousTime = null; return; }
+                if (previousTime !== null) {
+                    const distance = group.getBoundingClientRect().width;
+                    if (distance > 0) {
+                        partnersViewport.scrollLeft = (partnersViewport.scrollLeft + Math.min(time - previousTime, 64) * 0.035) % distance;
+                    }
+                }
+                previousTime = time;
+                frame = requestAnimationFrame(tick);
+            };
+            const updatePlayback = () => {
+                partnersToggle.textContent = playing ? 'Pause slideshow' : 'Play slideshow';
+                partnersToggle.setAttribute('aria-label', playing ? 'Pause partner slideshow' : 'Play partner slideshow');
+                if (canAnimate() && frame === null) frame = requestAnimationFrame(tick);
+                else if (!canAnimate() && frame !== null) {
+                    cancelAnimationFrame(frame); frame = null; previousTime = null;
+                }
+            };
+            partnersToggle.hidden = false;
+            partnersToggle.addEventListener('click', () => { playing = !playing; updatePlayback(); });
+            partnersViewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; updatePlayback(); });
+            partnersViewport.addEventListener('pointerleave', () => { hovered = false; updatePlayback(); });
+            partnersViewport.addEventListener('focusin', () => { focused = true; updatePlayback(); });
+            partnersViewport.addEventListener('focusout', event => { focused = partnersViewport.contains(event.relatedTarget); updatePlayback(); });
+            partnersViewport.addEventListener('pointerdown', () => { touching = true; updatePlayback(); });
+            window.addEventListener('pointerup', () => { touching = false; updatePlayback(); });
+            window.addEventListener('pointercancel', () => { touching = false; updatePlayback(); });
+            document.addEventListener('visibilitychange', updatePlayback);
+            motionPreference.addEventListener('change', event => { playing = !event.matches; updatePlayback(); });
+            updatePlayback();
+        }
+    }
+
 });
